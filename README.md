@@ -1,6 +1,15 @@
-<h1> Projeto DAO </h1>
- <ul><h2>Alunas:</h2>
-<li><h4>Yohanna de Oliveira Cavalcanti</h4></li>
-<li><h4>Ana Julia Oliveira Lins</h4></li>
+<h1> Projeto JPA </h1>
 
-<h4>vídeo explicativo no youtube:</h4> https://www.youtube.com/watch?v=OoobYE5OLVI
+Implementação:<br>
+• Implementar o primeiro projeto para usar um banco relacional:<br>
+o Mapear as classes do modelo de negócio com JPA<br>
+o Usar a mesma Fachada/Aplicações do projeto1<br>
+o Usar a classe DAO genérico do exemplo AgendaJPA-dao<br>
+o Usar tecnologia Maven (pom.xml) <br>
+o Configurar ip=54.94.169.84 e database=projeto3. Mapear as tabelas com nome<br>
+concatenado com a matrícula (ex: tabela Video20192387654)<br>
+o Adicionar o atributo idade na classe Visualizacao que será calculado nos<br>
+eventos (trigger) @PrePersist e @PostLoad, utilizando a data do computador<br>
+o Adicionar o atributo versao em cada classe, para permitir o controle de<br>
+concorrência otimista entre instâncias da mesma aplicação<br>
+o Desativar o cache de objetos, caso necessário<br>
