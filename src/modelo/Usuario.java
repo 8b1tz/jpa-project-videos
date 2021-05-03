@@ -1,11 +1,36 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "usuario")
 public class Usuario {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private Date dataNasc;
 	private String email;
+	private String versao;
+	@OneToMany
+	@JoinColumn(name = "usuario")
 	private List<Visualizacao> visualizacoes = new ArrayList<>();
+
+	
+	public Usuario() {
+	
+	}
 
 	public Usuario(String email) {
 		this.email = email;
