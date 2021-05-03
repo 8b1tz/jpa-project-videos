@@ -1,26 +1,24 @@
-/**********************************
- * IFPB - Curso Superior de Tec. em Sist. para Internet
- * Persistencia de Objetos
- * Prof. Fausto Maranhão Ayres
- **********************************/
-
 package dao;
 
+import java.io.FileInputStream;
 import java.lang.reflect.ParameterizedType;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.List;
+import java.util.Properties;
 
-import com.db4o.Db4oEmbedded;
-import com.db4o.ObjectContainer;
-import com.db4o.config.EmbeddedConfiguration;
-import com.db4o.query.Query;
-
-import modelo.Assunto;
-import modelo.Usuario;
-import modelo.Video;
-import modelo.Visualizacao;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 public abstract class DAO<T> implements DAOInterface<T> {
-	protected static ObjectContainer manager;
+	protected static EntityManager manager;
+	protected static EntityManagerFactory factory;
+
+	public DAO() {
+	}
 
 	public static void open() {
 		if (manager == null) {
@@ -29,33 +27,46 @@ public abstract class DAO<T> implements DAOInterface<T> {
 	}
 
 	public static void abrirBancoLocal() {
-		// new File("banco.db4o").delete(); //apagar o banco
-		EmbeddedConfiguration config = Db4oEmbedded.newConfiguration();
-		config.common().messageLevel(0); // 0,1,2,3...
-		config.common().objectClass(Video.class).cascadeOnUpdate(true);
-		config.common().objectClass(Video.class).cascadeOnDelete(true);
-		config.common().objectClass(Video.class).cascadeOnActivate(true);
-		config.common().objectClass(Assunto.class).cascadeOnUpdate(true);
-		config.common().objectClass(Assunto.class).cascadeOnDelete(true);
-		config.common().objectClass(Assunto.class).cascadeOnActivate(true);
-		config.common().objectClass(Usuario.class).cascadeOnUpdate(true);
-		config.common().objectClass(Usuario.class).cascadeOnDelete(true);
-		config.common().objectClass(Usuario.class).cascadeOnActivate(true);
-		config.common().objectClass(Visualizacao.class).cascadeOnUpdate(true);
-		config.common().objectClass(Visualizacao.class).cascadeOnDelete(false);
-		config.common().objectClass(Visualizacao.class).cascadeOnActivate(true);
-		// indices
-		config.common().objectClass(Video.class).objectField("link").indexed(true);
-		config.common().objectClass(Assunto.class).objectField("palavra").indexed(true);
-		config.common().objectClass(Usuario.class).objectField("email").indexed(true);
-		config.common().objectClass(Visualizacao.class).objectField("id").indexed(true);
+		/*****************************************************************************
+		 * Determinar o nome da unidade de persistencia a ser processada no
+		 * persistence.xml Este nome é a concatenacao dos nomes provedor+sgbd lidos do
+		 * arquivo dados.properties
+		 *****************************************************************************/
+		String nomeUnidadePersistencia = null;
+		Properties dados = new Properties();
+		String provedor;
+		String sgbd = "";
+		String ip;
+		try {
+			dados.load(new FileInputStream("src/dados.properties"));
+			provedor = dados.getProperty("provedor");
+			sgbd = dados.getProperty("sgbd");
+			nomeUnidadePersistencia = provedor + "-" + sgbd;
 
-		manager = Db4oEmbedded.openFile(config, "bancorepy.db4o");
+		} catch (Exception e) {
+
+			System.exit(0);
+		}
+
+		/*****************************************************************************
+		 * Substituir o ip do persistence.xml pelo ip do dados.properties
+		 *****************************************************************************/
+		ip = dados.getProperty("ip");
+		Properties prop = new Properties();
+		if (sgbd.equals("postgres"))
+			prop.setProperty("javax.persistence.jdbc.url", "jdbc:postgresql://" + ip + ":5432/agenda");
+		if (sgbd.equals("mysql"))
+			prop.setProperty("javax.persistence.jdbc.url",
+					"jdbc:mysql://" + ip + ":3306/agenda?createDatabaseIfNotExist=true");
+
+		factory = Persistence.createEntityManagerFactory(nomeUnidadePersistencia, prop);
+		manager = factory.createEntityManager();
 	}
 
 	public static void close() {
-		if (manager != null) {
+		if (manager != null && manager.isOpen()) {
 			manager.close();
+			factory.close();
 			manager = null;
 		}
 	}
@@ -63,43 +74,97 @@ public abstract class DAO<T> implements DAOInterface<T> {
 	// ----------CRUD-----------------------
 
 	public void create(T obj) {
-		manager.store(obj);
+		manager.persist(obj);
 	}
 
 	public abstract T read(Object chave);
 
 	public T update(T obj) {
-		manager.store(obj);
+		manager.merge(obj);
 		return obj;
 	}
 
 	public void delete(T obj) {
-		manager.delete(obj);
-	}
-
-	public void refresh(T obj) {
-		manager.ext().refresh(obj, Integer.MAX_VALUE);
+		manager.remove(obj);
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<T> readAll() {
 		Class<T> type = (Class<T>) ((ParameterizedType) this.getClass().getGenericSuperclass())
 				.getActualTypeArguments()[0];
-		Query q = manager.query();
-		q.constrain(type);
-		return (List<T>) (q.execute());
+
+		TypedQuery<T> query = manager.createQuery("select x from " + type.getSimpleName() + " x", type);
+		return query.getResultList();
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<T> readAllPagination(int firstResult, int maxResults) {
+		Class<T> type = (Class<T>) ((ParameterizedType) this.getClass().getGenericSuperclass())
+				.getActualTypeArguments()[0];
+
+		return manager.createQuery("select x from " + type.getSimpleName() + " x", type).setFirstResult(firstResult - 1)
+				.setMaxResults(maxResults).getResultList();
+	}
+
+	public void deleteAll() {
+		@SuppressWarnings("unchecked")
+		Class<T> type = (Class<T>) ((ParameterizedType) this.getClass().getGenericSuperclass())
+				.getActualTypeArguments()[0];
+
+		String tabela = type.getSimpleName();
+		Query query = manager.createQuery("delete from " + tabela);
+		query.executeUpdate();
+
+		// resetar a sequencia de ids depende do SGBD
+		String nomesgbd = "";
+		try {
+			Connection con = getConnection();
+			if (con == null)
+				throw new RuntimeException("DAO - falha ao obter conexao");
+
+			nomesgbd = con.getMetaData().getDatabaseProductName();
+
+			if (nomesgbd.equalsIgnoreCase("postgresql"))
+				query = manager.createNativeQuery("ALTER SEQUENCE " + tabela + "_id_seq RESTART WITH 1");
+			else if (nomesgbd.equalsIgnoreCase("mysql"))
+				query = manager.createNativeQuery("ALTER TABLE " + tabela + " AUTO_INCREMENT = 1");
+
+			query.executeUpdate();
+		} catch (Exception ex) {
+			throw new RuntimeException("DAO - Nome de SGBD invalido:" + nomesgbd);
+		}
+	}
+
+	public static Connection getConnection() {
+		try {
+			String driver = (String) manager.getProperties().get("javax.persistence.jdbc.driver");
+			String url = (String) manager.getProperties().get("javax.persistence.jdbc.url");
+			String user = (String) manager.getProperties().get("javax.persistence.jdbc.user");
+			String pass = (String) manager.getProperties().get("javax.persistence.jdbc.password");
+			Class.forName(driver);
+			return DriverManager.getConnection(url, user, pass);
+		} catch (Exception ex) {
+			return null;
+		}
 	}
 
 	// --------transação---------------
 	public static void begin() {
-	} // tem que ser vazio
+		if (!manager.getTransaction().isActive())
+			manager.getTransaction().begin();
+	}
 
 	public static void commit() {
-		manager.commit();
+		if (manager.getTransaction().isActive()) {
+			manager.getTransaction().commit();
+			manager.clear(); // ---- esvazia o cache de objetos ----
+		}
 	}
 
 	public static void rollback() {
-		manager.rollback();
+		if (manager.getTransaction().isActive())
+			manager.getTransaction().rollback();
 	}
+
 
 }
