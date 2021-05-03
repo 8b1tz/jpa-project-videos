@@ -3,6 +3,7 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Assunto {
 	private String palavra;
 	private List<Video> videos = new ArrayList<>();
