@@ -160,8 +160,8 @@ public class TelaListagemVideo {
 					model.addColumn("Assunto");
 					model.addColumn("Link");
 					model.addColumn("Classificacao");
-
-					List<Video> listaVideos = Fachada.consultarVideosPorUsuario(usuario);
+//
+//					List<Video> listaVideos = Fachada.consultarVideosPorUsuario(usuario);
 
 					for (Video v : listaVideos)
 							model.addRow(new Object[] { v.getNome(), v.getListaAssuntosPretty(), v.getLink(), v.getMedia() });
@@ -221,8 +221,8 @@ public class TelaListagemVideo {
 					DefaultTableModel model = new DefaultTableModel();
 					model.addColumn("Email");
 					
-
-					List<Usuario> listausUsuarios = Fachada.consultarUsuariosPorVideo(link);
+//
+//					List<Usuario> listausUsuarios = Fachada.consultarUsuariosPorVideo(link);
 
 					for (Usuario u : listausUsuarios)
 							model.addRow(new Object[] { u.getEmail() });
