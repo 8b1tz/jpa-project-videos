@@ -292,40 +292,40 @@ public class Fachada {
 		return lista;
 	}
 
-	public static List<Video> consultarVideosPorUsuario(String email) throws Exception {
-		boolean existe = false;
-		List<Video> lista = new ArrayList<Video>();
-		if (email.isEmpty())
-			return daovideo.readAll();
-		for (Usuario u : listarUsuarios()) {
-			if (u.getEmail().equals(email)) {
-				lista = daovideo.consultarVideosPorUsuario(email);
-				existe = true;
-				break;
-			}
-		}
-		if (existe == false) {
-			throw new Exception("Usuario com email {   " + email + "     } nao existe ");
-		}
-		return lista;
-	}
-
-	public static List<Usuario> consultarUsuariosPorVideo(String link) throws Exception {
-		boolean existe = false;
-		List<Usuario> lista = new ArrayList<Usuario>();
-		if (link.isEmpty())
-			return daousuario.readAll();
-		
-		for (Visualizacao v : listarVisualizacoes()) {
-			if (v.getVideo().getLink().equals(link)) {
-				lista = daousuario.consultarUsuariosPorVideo(link);
-				existe = true;
-				break;
-			}
-		}
-		if (existe == false) {
-			throw new Exception("Link {   " + link + "     } nao tem visualizaçoes ");
-		}
-		return lista;
-	}
+//	public static List<Video> consultarVideosPorUsuario(String email) throws Exception {
+//		boolean existe = false;
+//		List<Video> lista = new ArrayList<Video>();
+//		if (email.isEmpty())
+//			return daovideo.readAll();
+//		for (Usuario u : listarUsuarios()) {
+//			if (u.getEmail().equals(email)) {
+//				lista = daovideo.consultarVideosPorUsuario(email);
+//				existe = true;
+//				break;
+//			}
+//		}
+//		if (existe == false) {
+//			throw new Exception("Usuario com email {   " + email + "     } nao existe ");
+//		}
+//		return lista;
+//	}
+//
+//	public static List<Usuario> consultarUsuariosPorVideo(String link) throws Exception {
+//		boolean existe = false;
+//		List<Usuario> lista = new ArrayList<Usuario>();
+//		if (link.isEmpty())
+//			return daousuario.readAll();
+//		
+//		for (Visualizacao v : listarVisualizacoes()) {
+//			if (v.getVideo().getLink().equals(link)) {
+//				lista = daousuario.consultarUsuariosPorVideo(link);
+//				existe = true;
+//				break;
+//			}
+//		}
+//		if (existe == false) {
+//			throw new Exception("Link {   " + link + "     } nao tem visualizaçoes ");
+//		}
+//		return lista;
+//	}
 }

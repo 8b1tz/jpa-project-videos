@@ -25,22 +25,26 @@
 =======
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 
- <persistence-unit name="youtube" transaction-type="RESOURCE_LOCAL">
- 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+	<persistence-unit name="hibernate-postgres" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-		    <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://127.0.0.1:5432/youtube" />
+		    <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://127.0.0.1:5432/projeto3" />
 		    <property name="javax.persistence.jdbc.user" value="postgres" />
 		    <property name="javax.persistence.jdbc.password" value="1234567" />
  		    
 		    <property name="hibernate.dialect"   		value="org.hibernate.dialect.PostgreSQL95Dialect" />
    			<property name="hibernate.hbm2ddl.auto" 	value="update" />  
    			<property name="hibernate.generate_statistics" 	value="false" />  
-   			<property name="hibernate.format_sql" 		value="true" />
-   			<property name="hibernate.show_sql" 		value="true" /> 
+   			<property name="hibernate.format_sql" 		value="false" />
+   			<property name="hibernate.show_sql" 		value="false" /> 
 			<property name="hibernate.use_sql_comments" value="false" /> 
 		</properties>
+<<<<<<< HEAD
 	</persistence-unit>	
 >>>>>>> d9cc8ecedcc9c7375dd144e4222c9f33de69012e
+=======
+	</persistence-unit>
+>>>>>>> 8c70e9d6466bff98ebf89d72c7c94cf507ebf5aa
 </persistence>

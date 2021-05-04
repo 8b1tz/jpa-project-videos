@@ -53,12 +53,7 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		 *****************************************************************************/
 		ip = dados.getProperty("ip");
 		Properties prop = new Properties();
-		if (sgbd.equals("postgres"))
-			prop.setProperty("javax.persistence.jdbc.url", "jdbc:postgresql://" + ip + ":5432/agenda");
-		if (sgbd.equals("mysql"))
-			prop.setProperty("javax.persistence.jdbc.url",
-					"jdbc:mysql://" + ip + ":3306/agenda?createDatabaseIfNotExist=true");
-
+		prop.setProperty("javax.persistence.jdbc.url", "jdbc:postgresql://" + ip + ":5432/projeto3");
 		factory = Persistence.createEntityManagerFactory(nomeUnidadePersistencia, prop);
 		manager = factory.createEntityManager();
 	}
@@ -124,11 +119,9 @@ public abstract class DAO<T> implements DAOInterface<T> {
 
 			nomesgbd = con.getMetaData().getDatabaseProductName();
 
-			if (nomesgbd.equalsIgnoreCase("postgresql"))
-				query = manager.createNativeQuery("ALTER SEQUENCE " + tabela + "_id_seq RESTART WITH 1");
-			else if (nomesgbd.equalsIgnoreCase("mysql"))
-				query = manager.createNativeQuery("ALTER TABLE " + tabela + " AUTO_INCREMENT = 1");
-
+		
+			query = manager.createNativeQuery("ALTER SEQUENCE " + tabela + "_id_seq RESTART WITH 1");
+			
 			query.executeUpdate();
 		} catch (Exception ex) {
 			throw new RuntimeException("DAO - Nome de SGBD invalido:" + nomesgbd);
