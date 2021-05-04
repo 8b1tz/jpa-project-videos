@@ -3,6 +3,7 @@ package aplicacao_swing;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
@@ -10,20 +11,16 @@ import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 
 import fachada.Fachada;
-import modelo.Assunto;
-import modelo.Usuario;
 import modelo.Video;
-import java.awt.Toolkit;
-import javax.swing.JTable;
 
 public class TelaListagemVideo {
 	/**
@@ -160,11 +157,11 @@ public class TelaListagemVideo {
 					model.addColumn("Assunto");
 					model.addColumn("Link");
 					model.addColumn("Classificacao");
-//
-//					List<Video> listaVideos = Fachada.consultarVideosPorUsuario(usuario);
 
-					for (Video v : listaVideos)
-							model.addRow(new Object[] { v.getNome(), v.getListaAssuntosPretty(), v.getLink(), v.getMedia() });
+					//List<Video> listaVideos = Fachada.consultarVideosPorUsuario(usuario);
+
+					//for (Video v : listaVideos)
+					//		model.addRow(new Object[] { v.getNome(), v.getListaAssuntosPretty(), v.getLink(), v.getMedia() });
 
 					table.setModel(model);
 				} catch (Exception erro) {
@@ -221,11 +218,11 @@ public class TelaListagemVideo {
 					DefaultTableModel model = new DefaultTableModel();
 					model.addColumn("Email");
 					
-//
-//					List<Usuario> listausUsuarios = Fachada.consultarUsuariosPorVideo(link);
 
-					for (Usuario u : listausUsuarios)
-							model.addRow(new Object[] { u.getEmail() });
+					//List<Usuario> listausUsuarios = Fachada.consultarUsuariosPorVideo(link);
+
+					//for (Usuario u : listausUsuarios)
+					//		model.addRow(new Object[] { u.getEmail() });
 
 					table.setModel(model);
 				} catch (Exception erro) {

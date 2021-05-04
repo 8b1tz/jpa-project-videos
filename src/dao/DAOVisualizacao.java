@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
@@ -9,17 +11,20 @@ public class DAOVisualizacao extends DAO<Visualizacao> {
 
 	@Override
 	public Visualizacao read(Object chave) {
-
-		try {
-			Integer id = (Integer) chave; // casting para o tipo da chave
-			TypedQuery<Visualizacao> q = manager.createQuery("SELECT v FROM Visualizacao v WHERE v.id =:i",
-					Visualizacao.class);
-			q.setParameter("i", id);
-			return q.getSingleResult();
-		} catch (NoResultException e) {
-			return null;
-
+			try{
+				Integer id = (Integer) chave;
+				TypedQuery<Visualizacao> q = manager.createQuery("select vi from Visualizacao vi where vi.id=:i", Visualizacao.class);
+				q.setParameter("i", id);
+				return q.getSingleResult();
+			}catch(NoResultException e){
+				return null;
+			}
 		}
-	}
+
+		//  //pode-se sobrescrever o metodo readAll da classe DAO para ordenar o resultado 
+		public List<Visualizacao> readAll(){
+			TypedQuery<Visualizacao> q = manager.createQuery("select vi from Visualizacao vi order by vi.id", Visualizacao.class);
+			return  q.getResultList();
+		}
 
 }

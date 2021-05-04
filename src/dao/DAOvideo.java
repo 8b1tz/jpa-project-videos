@@ -10,17 +10,21 @@ import modelo.Video;
 public class DAOvideo extends DAO<Video> {
 
 	@Override
-	public Video read(Object chave) {
-
-		try {
-			String link = (String) chave; // casting para o tipo da chave
-			TypedQuery<Video> q = manager.createQuery("SELECT v FROM Video v WHERE v.link =:v", Video.class);
-			q.setParameter("v", link);
+	public Video read (Object chave){
+		try{
+			String link = (String) chave;
+			TypedQuery<Video> q = manager.createQuery("select v from Video v where v.link=:l", Video.class);
+			q.setParameter("l", link);
 			return q.getSingleResult();
-		} catch (NoResultException e) {
+		}catch(NoResultException e){
 			return null;
-
 		}
+	}
+
+	//  //pode-se sobrescrever o metodo readAll da classe DAO para ordenar o resultado 
+	public List<Video> readAll(){
+		TypedQuery<Video> q = manager.createQuery("select v from Video v order by v.id", Video.class);
+		return  q.getResultList();
 	}
 
 	public List<Video> consultarVideosPorAssunto(String palavra) {
@@ -34,16 +38,16 @@ public class DAOvideo extends DAO<Video> {
 		}
 	}
 
-//	public List<Video> consultarVideosPorUsuario(String email) {
-//		Query q = manager.query();
-//		q.constrain(Video.class);
-//		q.descend("visualizacoes").descend("usuario").descend("email").constrain(email);
-//		List<Video> resultados = q.execute();
-//		if (resultados.size() == 0) {
-//			return null;
-//		} else {
-//			return resultados;
-//		}
-//	}
-
+	public List<Video> consultarVideosPorUsuario(String email) {
+		try {
+			TypedQuery<Video> q = manager.createQuery("select v from Video v join Usuario u where u.email=:e",
+					Video.class);
+			q.setParameter("e", email);
+			return q.getResultList();
+		} catch (NoResultException e) {
+			return null;
+		}
+	}
 }
+
+
