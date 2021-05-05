@@ -97,15 +97,15 @@ public class Fachada {
 		if (a != null) {
 			v.adicionar(a);
 			a.adicionar(v);
-			daoassunto.update(a);
-
+			daovideo.create(v);
+			
 		} else {
 			Assunto asu = new Assunto(palavra);
 			v.adicionar(asu);
 			asu.adicionar(v);
-			daoassunto.create(asu);
+			daovideo.create(v);
 		}
-		daovideo.create(v);
+
 		DAO.commit();
 		return v;
 
@@ -125,7 +125,6 @@ public class Fachada {
 		Visualizacao visu = new Visualizacao(nota, null, v);
 		v.adicionar(visu);
 		v.fazerMedia();
-		v = daovideo.update(v);
 		daovisualizacao.create(visu);
 		DAO.commit();
 		return visu;
@@ -146,10 +145,8 @@ public class Fachada {
 		if (u != null) {
 			Visualizacao visu = new Visualizacao(nota, u, v);
 			v.adicionar(visu);
-			v = daovideo.update(v);
 			v.fazerMedia();
 			u.adicionar(visu);
-			u = daousuario.update(u);
 			daovisualizacao.create(visu);
 			DAO.commit();
 			return visu;
@@ -185,12 +182,12 @@ public class Fachada {
 			as.adicionar(v);
 			v.adicionar(as);
 			as = daoassunto.update(as);
-			v =daovideo.update(v);
+			v = daovideo.update(v);
 			DAO.commit();
 		} else {
 			a.adicionar(v);
 			v.adicionar(a);
-			a =daoassunto.update(a);
+			a = daoassunto.update(a);
 			v = daovideo.update(v);
 			DAO.commit();
 		}
@@ -221,8 +218,8 @@ public class Fachada {
 		u.remover(vi);
 		vi.setUsuario(null);
 		vi.setVideo(null);
-		u =daousuario.update(u);
-		v =daovideo.update(v);
+		u = daousuario.update(u);
+		v = daovideo.update(v);
 		daovisualizacao.delete(vi);
 		DAO.commit();
 	}

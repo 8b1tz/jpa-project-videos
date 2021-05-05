@@ -21,10 +21,11 @@ public class Visualizacao {
 	private int nota;
 	private String versao;
 	
-	@ManyToOne
+
+	@ManyToOne(cascade={CascadeType.ALL})
 	private Usuario usuario;
 	
-	@ManyToOne
+	@ManyToOne(cascade={CascadeType.ALL})
 	private Video video;
 
 	public Visualizacao() {
