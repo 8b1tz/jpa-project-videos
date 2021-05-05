@@ -14,6 +14,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.engine.internal.CascadePoint;
+
 @Entity
 @Table(name = "video20191370002")
 public class Video {
@@ -26,6 +28,7 @@ public class Video {
 	private String nome;
 	private double media;
 	
+
 	@ManyToMany(mappedBy="videos",cascade={CascadeType.ALL}) 
 	private List<Assunto> assuntos = new ArrayList<>();
 	

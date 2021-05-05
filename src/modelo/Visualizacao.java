@@ -21,6 +21,7 @@ public class Visualizacao {
 	private int nota;
 	private String versao;
 	
+
 	@ManyToOne(cascade={CascadeType.ALL})
 	private Usuario usuario;
 	

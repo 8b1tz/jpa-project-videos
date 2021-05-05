@@ -20,5 +20,9 @@ public class DAOVisualizacao extends DAO<Visualizacao> {
 				return null;
 			}
 		}
+	public List<Visualizacao> readAll(){
+		TypedQuery<Visualizacao> q = manager.createQuery("select vi from Visualizacao vi order by vi.id", Visualizacao.class);
+		return  q.getResultList();
+	}
 
 }

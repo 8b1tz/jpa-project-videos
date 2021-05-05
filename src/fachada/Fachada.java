@@ -71,63 +71,46 @@ public class Fachada {
 			DAO.rollback();
 			throw new Exception("Link ja cadastrado: " + link);
 		}
-		
 		v = new Video(link, nome);
-		Assunto a = daoassunto.read("X");
-
-		if (a != null) {
-			a.adicionar(v);
-			v.adicionar(a);
-			daoassunto.update(a);
-			daovideo.create(v);
-		}
-		else {
-			a = new Assunto("X");
-			a.adicionar(v);
-			v.adicionar(a);
-			daoassunto.create(a);
-			daovideo.create(v);
-		}
+		daovideo.create(v);
 		DAO.commit();
 		return v;
 	}
 
 	public static Video cadastrarVideo(String link, String nome, String palavra) throws Exception {
-        DAO.begin();
-        if (link.isEmpty()) {
-            DAO.rollback();
-            throw new Exception("Precisa-se de um link ! ");
-        }
-        if (nome.isEmpty()) {
-            DAO.rollback();
-            throw new Exception("O video precisa de um nome!");
-        }
-        Video v = daovideo.read(link);
-        if (v != null) {
-            DAO.rollback();
-            throw new Exception("Link ja cadastrado: " + link);
-        }
-        Assunto a = daoassunto.read(palavra);
-        v = new Video(link, nome);
-        if (a != null) {
-            v.adicionar(a);
-            a.adicionar(v);
-            daoassunto.update(a);
-            daovideo.create(v);
+		DAO.begin();
+		if (link.isEmpty()) {
+			DAO.rollback();
+			throw new Exception("Precisa-se de um link ! ");
+		}
+		if (nome.isEmpty()) {
+			DAO.rollback();
+			throw new Exception("O video precisa de um nome!");
+		}
+		Video v = daovideo.read(link);
+		if (v != null) {
+			DAO.rollback();
+			throw new Exception("Link ja cadastrado: " + link);
+		}
+		Assunto a = daoassunto.read(palavra);
+		v = new Video(link, nome);
+		if (a != null) {
+			v.adicionar(a);
+			a.adicionar(v);
+			daovideo.create(v);
+			
+		} else {
+			Assunto asu = new Assunto(palavra);
+			v.adicionar(asu);
+			asu.adicionar(v);
+			daovideo.create(v);
+		}
 
-        } else {
-            Assunto asu = new Assunto(palavra);
-            v.adicionar(asu);
-            asu.adicionar(v);
-            daoassunto.create(asu);
-            daovideo.create(v);
-        }
-        
-        DAO.commit();
-        return v;
+		DAO.commit();
+		return v;
 
-    }
-	
+	}
+
 	public static Visualizacao registrarVisualizacao(String link, int nota) throws Exception {
 		DAO.begin();
 		if (link.isEmpty()) {
@@ -139,11 +122,9 @@ public class Fachada {
 			DAO.rollback();
 			throw new Exception("Video não encontrado");
 		}
-		
 		Visualizacao visu = new Visualizacao(nota, null, v);
 		v.adicionar(visu);
 		v.fazerMedia();
-		daovideo.update(v);
 		daovisualizacao.create(visu);
 		DAO.commit();
 		return visu;
@@ -164,16 +145,14 @@ public class Fachada {
 		if (u != null) {
 			Visualizacao visu = new Visualizacao(nota, u, v);
 			v.adicionar(visu);
-			daovideo.update(v);
 			v.fazerMedia();
 			u.adicionar(visu);
-			daousuario.update(u);
 			daovisualizacao.create(visu);
 			DAO.commit();
 			return visu;
 		} else {
 			Usuario usu = cadastrarUsuario(email);
-			Visualizacao visu = new Visualizacao(nota,usu,v );
+			Visualizacao visu = new Visualizacao(nota, usu, v);
 			v.adicionar(visu);
 			v.fazerMedia();
 			daovideo.create(v);
@@ -202,14 +181,14 @@ public class Fachada {
 			Assunto as = cadastrarAssunto(palavra);
 			as.adicionar(v);
 			v.adicionar(as);
-			daovideo.update(v);
-			daoassunto.create(as);
+			as = daoassunto.update(as);
+			v = daovideo.update(v);
 			DAO.commit();
 		} else {
 			a.adicionar(v);
 			v.adicionar(a);
-			daoassunto.update(a);
-			daovideo.update(v);
+			a = daoassunto.update(a);
+			v = daovideo.update(v);
 			DAO.commit();
 		}
 	}
@@ -226,7 +205,6 @@ public class Fachada {
 		throw new Exception("id não existe !");
 	};
 
-
 	public static void apagarVisualizacao(int id) throws Exception {
 		DAO.begin();
 		Visualizacao vi = daovisualizacao.read(id);
@@ -240,8 +218,8 @@ public class Fachada {
 		u.remover(vi);
 		vi.setUsuario(null);
 		vi.setVideo(null);
-		daousuario.update(u);
-		daovideo.update(v);
+		u = daousuario.update(u);
+		v = daovideo.update(v);
 		daovisualizacao.delete(vi);
 		DAO.commit();
 	}

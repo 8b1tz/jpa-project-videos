@@ -21,6 +21,7 @@ public class Assunto {
 	private String palavra = "X";
 	private String versao;
 	
+
 	@ManyToMany(cascade={CascadeType.ALL})
 	private List<Video> videos = new ArrayList<>();
 	 
