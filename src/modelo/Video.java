@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -25,10 +26,10 @@ public class Video {
 	private String nome;
 	private double media;
 	
-	@ManyToMany(mappedBy="videos",cascade={CascadeType.MERGE}) 
+	@ManyToMany(mappedBy="videos",cascade={CascadeType.ALL}) 
 	private List<Assunto> assuntos = new ArrayList<>();
 	
-	@OneToMany(mappedBy="video", cascade={CascadeType.MERGE}) 	
+	@OneToMany(mappedBy="video", cascade={CascadeType.ALL}) 	
 	private List<Visualizacao> visualizacoes = new ArrayList<>();
 
 	public Video() {

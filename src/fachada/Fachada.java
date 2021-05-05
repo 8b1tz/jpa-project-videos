@@ -93,8 +93,9 @@ public class Fachada {
 			throw new Exception("Link ja cadastrado: " + link);
 		}
 		Assunto a = daoassunto.read(palavra);
-		v = new Video(link, nome);
+		
 		if (a != null) {
+			v = new Video(link, nome);
 			daovideo.create(v);
 			v.adicionar(a);
 			a.adicionar(v);
@@ -103,12 +104,19 @@ public class Fachada {
 			DAO.commit();
 			return v;
 		} else {
-			Assunto asu = cadastrarAssunto(palavra);
+			v = new Video(link, nome);
+			Assunto asu = new Assunto(palavra);
+			
+			DAO.begin();
 			daoassunto.create(asu);
+			asu.adicionar(v);
+			daoassunto.update(asu);
+			DAO.commit();
+			
 			daovideo.create(v);
 			v.adicionar(asu);
-			asu.adicionar(v);
 			daovideo.update(v);
+			daoassunto.update(asu);
 			DAO.commit();
 			return v;
 		}
