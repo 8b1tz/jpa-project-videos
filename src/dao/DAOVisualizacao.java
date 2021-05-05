@@ -21,10 +21,4 @@ public class DAOVisualizacao extends DAO<Visualizacao> {
 			}
 		}
 
-		//  //pode-se sobrescrever o metodo readAll da classe DAO para ordenar o resultado 
-		public List<Visualizacao> readAll(){
-			TypedQuery<Visualizacao> q = manager.createQuery("select vi from Visualizacao vi order by vi.id", Visualizacao.class);
-			return  q.getResultList();
-		}
-
 }

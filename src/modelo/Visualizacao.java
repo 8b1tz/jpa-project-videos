@@ -2,6 +2,7 @@ package modelo;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,21 +20,21 @@ public class Visualizacao {
 	private String datahora = String.valueOf((LocalDateTime.now()));
 	private int nota;
 	private String versao;
-	@ManyToOne
+	
+	@ManyToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE})
 	private Usuario usuario;
 	
-	@ManyToOne
+	@ManyToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE})
 	private Video video;
 
 	public Visualizacao() {
 
 	}
 
-	public Visualizacao(int id, int nota, Usuario usuario, Video video) throws Exception {
+	public Visualizacao( int nota, Usuario usuario, Video video) throws Exception {
 		if (nota > 5 || nota < 1) {
 			throw new Exception("Nota invalida!");
 		}
-		this.id = id;
 		this.nota = nota;
 		this.usuario = usuario;
 		this.video = video;

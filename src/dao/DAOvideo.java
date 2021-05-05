@@ -4,28 +4,25 @@ import java.util.List;
 
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
+
+import modelo.Assunto;
 import modelo.Usuario;
 import modelo.Video;
 
 public class DAOvideo extends DAO<Video> {
-
 	@Override
-	public Video read (Object chave){
-		try{
+	public Video read(Object chave) {
+		try {
 			String link = (String) chave;
 			TypedQuery<Video> q = manager.createQuery("select v from Video v where v.link=:l", Video.class);
 			q.setParameter("l", link);
 			return q.getSingleResult();
-		}catch(NoResultException e){
+		} catch (NoResultException e) {
 			return null;
 		}
 	}
 
-	//  //pode-se sobrescrever o metodo readAll da classe DAO para ordenar o resultado 
-	public List<Video> readAll(){
-		TypedQuery<Video> q = manager.createQuery("select v from Video v order by v.id", Video.class);
-		return  q.getResultList();
-	}
+
 
 	public List<Video> consultarVideosPorAssunto(String palavra) {
 		try {
@@ -49,5 +46,3 @@ public class DAOvideo extends DAO<Video> {
 		}
 	}
 }
-
-

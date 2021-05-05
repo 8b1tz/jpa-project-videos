@@ -20,6 +20,7 @@ import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 
 import fachada.Fachada;
+import modelo.Usuario;
 import modelo.Video;
 
 public class TelaListagemVideo {
@@ -158,10 +159,10 @@ public class TelaListagemVideo {
 					model.addColumn("Link");
 					model.addColumn("Classificacao");
 
-					//List<Video> listaVideos = Fachada.consultarVideosPorUsuario(usuario);
+					List<Video> listaVideos = Fachada.consultarVideosPorUsuario(usuario);
 
-					//for (Video v : listaVideos)
-					//		model.addRow(new Object[] { v.getNome(), v.getListaAssuntosPretty(), v.getLink(), v.getMedia() });
+					for (Video v : listaVideos)
+							model.addRow(new Object[] { v.getNome(), v.getListaAssuntosPretty(), v.getLink(), v.getMedia() });
 
 					table.setModel(model);
 				} catch (Exception erro) {
@@ -219,10 +220,10 @@ public class TelaListagemVideo {
 					model.addColumn("Email");
 					
 
-					//List<Usuario> listausUsuarios = Fachada.consultarUsuariosPorVideo(link);
+					List<Usuario> listausUsuarios = Fachada.consultarUsuariosPorVideo(link);
 
-					//for (Usuario u : listausUsuarios)
-					//		model.addRow(new Object[] { u.getEmail() });
+					for (Usuario u : listausUsuarios)
+							model.addRow(new Object[] { u.getEmail() });
 
 					table.setModel(model);
 				} catch (Exception erro) {

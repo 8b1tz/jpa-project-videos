@@ -3,6 +3,7 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +20,8 @@ public class Assunto {
 	private int id;
 	private String palavra;
 	private String versao;
-	@ManyToMany(mappedBy = "assuntos")
+	
+	@ManyToMany(cascade={CascadeType.PERSIST,CascadeType.MERGE})
 	private List<Video> videos = new ArrayList<>();
 	 
 	public Assunto() {

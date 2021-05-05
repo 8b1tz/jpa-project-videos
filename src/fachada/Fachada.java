@@ -18,7 +18,6 @@ public class Fachada {
 	private static DAOAssunto daoassunto = new DAOAssunto();
 	private static DAOusuario daousuario = new DAOusuario();
 	private static DAOVisualizacao daovisualizacao = new DAOVisualizacao();
-	private static int id ;
 
 	public static void inicializar() {
 		DAO.open();
@@ -96,24 +95,24 @@ public class Fachada {
 		Assunto a = daoassunto.read(palavra);
 		v = new Video(link, nome);
 		if (a != null) {
+			daovideo.create(v);
 			v.adicionar(a);
 			a.adicionar(v);
 			daoassunto.update(a);
 			daovideo.update(v);
-			daovideo.create(v);
 			DAO.commit();
 			return v;
 		} else {
 			Assunto asu = cadastrarAssunto(palavra);
+			daoassunto.create(asu);
+			daovideo.create(v);
 			v.adicionar(asu);
 			asu.adicionar(v);
-			daoassunto.create(asu);
-			daoassunto.update(asu);
 			daovideo.update(v);
-			daovideo.create(v);
 			DAO.commit();
 			return v;
 		}
+		
 	}
 
 	public static Visualizacao registrarVisualizacao(String link, int nota) throws Exception {
@@ -127,12 +126,11 @@ public class Fachada {
 			DAO.rollback();
 			throw new Exception("Video não encontrado");
 		}
-		id = localizarMaiorIdVisualizacao() + 1;
-		Visualizacao visu = new Visualizacao(id, nota, null, v);
+		
+		Visualizacao visu = new Visualizacao(nota, null, v);
 		v.adicionar(visu);
 		v.fazerMedia();
 		daovideo.update(v);
-		
 		daovisualizacao.create(visu);
 		DAO.commit();
 		return visu;
@@ -151,28 +149,22 @@ public class Fachada {
 		}
 		Usuario u = daousuario.read(email);
 		if (u != null) {
-			id = localizarMaiorIdVisualizacao() + 1;
-			Visualizacao visu = new Visualizacao(id, nota, u, v);
+			Visualizacao visu = new Visualizacao(nota, u, v);
 			v.adicionar(visu);
-			v.fazerMedia();
 			daovideo.update(v);
-			
+			v.fazerMedia();
 			u.adicionar(visu);
 			daousuario.update(u);
 			daovisualizacao.create(visu);
 			DAO.commit();
 			return visu;
 		} else {
-			id = localizarMaiorIdVisualizacao() + 1;
 			Usuario usu = cadastrarUsuario(email);
-			Visualizacao visu = new Visualizacao(id, nota, usu, v);
+			Visualizacao visu = new Visualizacao(nota,usu,v );
 			v.adicionar(visu);
 			v.fazerMedia();
-			daovideo.update(v);
 			daovideo.create(v);
 			usu.adicionar(visu);
-			daousuario.update(usu);
-			
 			daovisualizacao.create(visu);
 			DAO.commit();
 			return visu;
@@ -191,26 +183,23 @@ public class Fachada {
 			DAO.rollback();
 			throw new Exception("Video inexistente");
 		}
-		
-	    Assunto a = daoassunto.read(palavra);
+
+		Assunto a = daoassunto.read(palavra);
 		if (a == null) {
-            Assunto as = cadastrarAssunto(palavra);
-            as.adicionar(v);
-            v.adicionar(as);
-            daovideo.update(v);
-            daoassunto.update(as);
-            daoassunto.create(as);
-            DAO.commit();
-        } else {
-            a.adicionar(v);
-            v.adicionar(a);
-            daovideo.update(v);
-            daoassunto.update(a);
-            daoassunto.create(a);
-            DAO.commit();
-        }
-    }
-	
+			Assunto as = cadastrarAssunto(palavra);
+			as.adicionar(v);
+			v.adicionar(as);
+			daovideo.update(v);
+			daoassunto.create(as);
+			DAO.commit();
+		} else {
+			a.adicionar(v);
+			v.adicionar(a);
+			daoassunto.update(a);
+			daovideo.update(v);
+			DAO.commit();
+		}
+	}
 
 // ---------------------------------------------------------------------------------------------------
 	public static Visualizacao localizarVisualizacao(int id) throws Exception {
@@ -224,17 +213,7 @@ public class Fachada {
 		throw new Exception("id não existe !");
 	};
 
-	public static Integer localizarMaiorIdVisualizacao() throws Exception {
-		List<Visualizacao> visu = listarVisualizacoes();
-		id = 0;
-		for (Visualizacao v : visu) {
-			if (v.getId() > id) {
-				id = v.getId();
-			}
-		}
-		return id;
 
-	};
 	public static void apagarVisualizacao(int id) throws Exception {
 		DAO.begin();
 		Visualizacao vi = daovisualizacao.read(id);
@@ -247,7 +226,6 @@ public class Fachada {
 		v.remover(vi);
 		u.remover(vi);
 		vi.setUsuario(null);
-		;
 		vi.setVideo(null);
 		daousuario.update(u);
 		daovideo.update(v);
@@ -292,40 +270,40 @@ public class Fachada {
 		return lista;
 	}
 
-//	public static List<Video> consultarVideosPorUsuario(String email) throws Exception {
-//		boolean existe = false;
-//		List<Video> lista = new ArrayList<Video>();
-//		if (email.isEmpty())
-//			return daovideo.readAll();
-//		for (Usuario u : listarUsuarios()) {
-//			if (u.getEmail().equals(email)) {
-//				lista = daovideo.consultarVideosPorUsuario(email);
-//				existe = true;
-//				break;
-//			}
-//		}
-//		if (existe == false) {
-//			throw new Exception("Usuario com email {   " + email + "     } nao existe ");
-//		}
-//		return lista;
-//	}
-//
-//	public static List<Usuario> consultarUsuariosPorVideo(String link) throws Exception {
-//		boolean existe = false;
-//		List<Usuario> lista = new ArrayList<Usuario>();
-//		if (link.isEmpty())
-//			return daousuario.readAll();
-//		
-//		for (Visualizacao v : listarVisualizacoes()) {
-//			if (v.getVideo().getLink().equals(link)) {
-//				lista = daousuario.consultarUsuariosPorVideo(link);
-//				existe = true;
-//				break;
-//			}
-//		}
-//		if (existe == false) {
-//			throw new Exception("Link {   " + link + "     } nao tem visualizaçoes ");
-//		}
-//		return lista;
-//	}
+	public static List<Video> consultarVideosPorUsuario(String email) throws Exception {
+		boolean existe = false;
+		List<Video> lista = new ArrayList<Video>();
+		if (email.isEmpty())
+			return daovideo.readAll();
+		for (Usuario u : listarUsuarios()) {
+			if (u.getEmail().equals(email)) {
+				lista = daovideo.consultarVideosPorUsuario(email);
+				existe = true;
+				break;
+			}
+		}
+		if (existe == false) {
+			throw new Exception("Usuario com email {   " + email + "     } nao existe ");
+		}
+		return lista;
+	}
+
+	public static List<Usuario> consultarUsuariosPorVideo(String link) throws Exception {
+		boolean existe = false;
+		List<Usuario> lista = new ArrayList<Usuario>();
+		if (link.isEmpty())
+			return daousuario.readAll();
+
+		for (Visualizacao v : listarVisualizacoes()) {
+			if (v.getVideo().getLink().equals(link)) {
+				lista = daousuario.consultarUsuariosPorVideo(link);
+				existe = true;
+				break;
+			}
+		}
+		if (existe == false) {
+			throw new Exception("Link {   " + link + "     } nao tem visualizaçoes ");
+		}
+		return lista;
+	}
 }
