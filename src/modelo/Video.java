@@ -13,6 +13,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.engine.internal.CascadePoint;
+
 @Entity
 @Table(name = "video")
 public class Video {
@@ -25,10 +27,10 @@ public class Video {
 	private String nome;
 	private double media;
 	
-	@ManyToMany(mappedBy="videos",cascade={CascadeType.MERGE}) 
+	@ManyToMany(mappedBy="videos")
 	private List<Assunto> assuntos = new ArrayList<>();
 	
-	@OneToMany(mappedBy="video", cascade={CascadeType.MERGE}) 	
+	@OneToMany(mappedBy="video")
 	private List<Visualizacao> visualizacoes = new ArrayList<>();
 
 	public Video() {

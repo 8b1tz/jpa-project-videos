@@ -182,7 +182,7 @@ public abstract class DAO<T> implements DAOInterface<T> {
 
 		q = manager.createQuery("delete from Usuario");
 		cont = q.executeUpdate();
-		log.debug("deletou usuarios: " + cont);
+		log.debug("deletou usuario: " + cont);
 
 		q = manager.createQuery("delete from Video");
 		cont = q.executeUpdate();

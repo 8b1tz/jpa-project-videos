@@ -1,3 +1,4 @@
+  
 package aplicacao_swing;
 
 import java.awt.Font;
@@ -100,6 +101,7 @@ public class TelaCadastroVideo extends JFrame {
 							saida.setText("Sucesso no Cadastro !!");
 						}catch (Exception e2) {
 							saida.setText(e2.getMessage());
+							System.out.print("Message error: " + e2.getMessage());
 						}
 						} else {
 						try {
@@ -107,6 +109,8 @@ public class TelaCadastroVideo extends JFrame {
 							saida.setText("Sucesso no Cadastro !!");
 						}catch (Exception e3) {
 							saida.setText(e3.getMessage());
+							System.out.print("Message error: " + e3.getMessage());
+
 						}
 					}
 				

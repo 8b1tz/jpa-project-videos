@@ -21,7 +21,7 @@ public class Assunto {
 	private String palavra;
 	private String versao;
 	
-	@ManyToMany(cascade={CascadeType.PERSIST,CascadeType.MERGE})
+	@ManyToMany
 	private List<Video> videos = new ArrayList<>();
 	 
 	public Assunto() {
