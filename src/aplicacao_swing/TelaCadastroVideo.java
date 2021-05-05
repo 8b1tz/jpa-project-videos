@@ -103,12 +103,14 @@ public class TelaCadastroVideo extends JFrame {
 							System.out.print("Message error: " + e2.getMessage());
 						}
 						} else {
+							
 						try {
 							Fachada.cadastrarVideo(link.getText(), nome.getText());
 							saida.setText("Sucesso no Cadastro !!");
 						}catch (Exception e3) {
 							saida.setText(e3.getMessage());
 							System.out.print("Message error: " + e3.getMessage());
+							
 
 						}
 					}
