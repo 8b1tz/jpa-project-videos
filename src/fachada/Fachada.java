@@ -71,58 +71,63 @@ public class Fachada {
 			DAO.rollback();
 			throw new Exception("Link ja cadastrado: " + link);
 		}
+		
 		v = new Video(link, nome);
-		daovideo.create(v);
+		Assunto a = daoassunto.read("X");
+
+		if (a != null) {
+			a.adicionar(v);
+			v.adicionar(a);
+			daoassunto.update(a);
+			daovideo.create(v);
+		}
+		else {
+			a = new Assunto("X");
+			a.adicionar(v);
+			v.adicionar(a);
+			daoassunto.create(a);
+			daovideo.create(v);
+		}
 		DAO.commit();
 		return v;
 	}
 
 	public static Video cadastrarVideo(String link, String nome, String palavra) throws Exception {
-		DAO.begin();
-		if (link.isEmpty()) {
-			DAO.rollback();
-			throw new Exception("Precisa-se de um link ! ");
-		}
-		if (nome.isEmpty()) {
-			DAO.rollback();
-			throw new Exception("O video precisa de um nome!");
-		}
-		Video v = daovideo.read(link);
-		if (v != null) {
-			DAO.rollback();
-			throw new Exception("Link ja cadastrado: " + link);
-		}
-		Assunto a = daoassunto.read(palavra);
-		
-		if (a != null) {
-			v = new Video(link, nome);
-			daovideo.create(v);
-			v.adicionar(a);
-			a.adicionar(v);
-			daoassunto.update(a);
-			daovideo.update(v);
-			DAO.commit();
-			return v;
-		} else {
-			v = new Video(link, nome);
-			Assunto asu = new Assunto(palavra);
-			
-			DAO.begin();
-			daoassunto.create(asu);
-			asu.adicionar(v);
-			daoassunto.update(asu);
-			DAO.commit();
-			
-			daovideo.create(v);
-			v.adicionar(asu);
-			daovideo.update(v);
-			daoassunto.update(asu);
-			DAO.commit();
-			return v;
-		}
-		
-	}
+        DAO.begin();
+        if (link.isEmpty()) {
+            DAO.rollback();
+            throw new Exception("Precisa-se de um link ! ");
+        }
+        if (nome.isEmpty()) {
+            DAO.rollback();
+            throw new Exception("O video precisa de um nome!");
+        }
+        Video v = daovideo.read(link);
+        if (v != null) {
+            DAO.rollback();
+            throw new Exception("Link ja cadastrado: " + link);
+        }
+        Assunto a = daoassunto.read(palavra);
+        v = new Video(link, nome);
+        if (a != null) {
+            v.adicionar(a);
+            a.adicionar(v);
+            daoassunto.update(a);
+            daovideo.create(v);
 
+        } else {
+            Assunto asu = new Assunto(palavra);
+            v.adicionar(asu);
+            asu.adicionar(v);
+            daoassunto.create(asu);
+            daovideo.create(v);
+        }
+        
+        DAO.commit();
+        return v;
+
+    }
+	
 	public static Visualizacao registrarVisualizacao(String link, int nota) throws Exception {
 		DAO.begin();
 		if (link.isEmpty()) {

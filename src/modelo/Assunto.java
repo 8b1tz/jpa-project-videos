@@ -12,13 +12,13 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "assunto")
+@Table (name = "assunto20191370003")
 public class Assunto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String palavra;
+	private String palavra = "X";
 	private String versao;
 	
 	@ManyToMany(cascade={CascadeType.ALL})

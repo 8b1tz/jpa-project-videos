@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "video")
+@Table(name = "video20191370002")
 public class Video {
 
 	@Id
@@ -29,7 +29,7 @@ public class Video {
 	@ManyToMany(mappedBy="videos",cascade={CascadeType.ALL}) 
 	private List<Assunto> assuntos = new ArrayList<>();
 	
-	@OneToMany(mappedBy="video", cascade={CascadeType.ALL}) 	
+	@OneToMany(mappedBy="video", cascade={CascadeType.PERSIST,CascadeType.MERGE}) 	
 	private List<Visualizacao> visualizacoes = new ArrayList<>();
 
 	public Video() {
