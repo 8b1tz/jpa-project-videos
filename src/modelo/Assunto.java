@@ -18,7 +18,7 @@ public class Assunto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String palavra = "X";
+	private String palavra;
 	private String versao;
 	
 

@@ -94,23 +94,25 @@ public class TelaCadastroVideo extends JFrame {
 		JButton buttonCadastrar = new JButton("Cadastrar");
 		buttonCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-					if (palavra.getText() != null) {
+
+					if (!palavra.getText().toString().trim().isEmpty()) {
+						
 						try {
 							Fachada.cadastrarVideo(link.getText(), nome.getText(), palavra.getText());
 							saida.setText("Sucesso no Cadastro !!");
 						}catch (Exception e2) {
 							saida.setText(e2.getMessage());
-							System.out.print("Message error: " + e2.getMessage());
+							System.out.print("\n Message error: " + e2.getMessage());
 						}
-						} else {
+					} 
+					else {
 							
 						try {
 							Fachada.cadastrarVideo(link.getText(), nome.getText());
 							saida.setText("Sucesso no Cadastro !!");
 						}catch (Exception e3) {
 							saida.setText(e3.getMessage());
-							System.out.print("Message error: " + e3.getMessage());
+							System.out.print("\n Message error: " + e3.getMessage());
 							
 
 						}

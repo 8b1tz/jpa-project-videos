@@ -42,21 +42,10 @@ public class Fachada {
 
 	}
 
-	public static Usuario cadastrarUsuario(String email) throws Exception {
-		DAO.begin();
-		Usuario u = daousuario.read(email);
-		if (u != null) {
-			DAO.rollback();
-			throw new Exception("Usuario já cadastrado!");
-		}
-		u = new Usuario(email);
-		daousuario.create(u);
-		DAO.commit();
-		return u;
-
-	}
 
 	public static Video cadastrarVideo(String link, String nome) throws Exception {
+		System.out.print("\n ENTROU NO SEM PALAVRA !!!!");
+		
 		DAO.begin();
 		if (nome.isEmpty()) {
 			DAO.rollback();
@@ -78,6 +67,8 @@ public class Fachada {
 	}
 
 	public static Video cadastrarVideo(String link, String nome, String palavra) throws Exception {
+		System.out.print("\n ENTROU NO COM PALAVRA !!!!");
+		
 		DAO.begin();
 		if (link.isEmpty()) {
 			DAO.rollback();
@@ -148,19 +139,24 @@ public class Fachada {
 			v.fazerMedia();
 			u.adicionar(visu);
 			daovisualizacao.create(visu);
+			
 			DAO.commit();
 			return visu;
+
 		} else {
-			Usuario usu = cadastrarUsuario(email);
+			Usuario usu  = new Usuario(email);
 			Visualizacao visu = new Visualizacao(nota, usu, v);
+
+			daousuario.create(usu);
+	
 			v.adicionar(visu);
 			v.fazerMedia();
-			daovideo.create(v);
-			usu.adicionar(visu);
 			daovisualizacao.create(visu);
+			
 			DAO.commit();
 			return visu;
 		}
+		
 	}
 
 //--------------------------------------- ATUALIZACAO ---------------------------------------------------------

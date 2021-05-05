@@ -100,7 +100,7 @@ public class TelaRegistroVisualizacao extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 
-					if (email.getText() != null) {
+					if (!email.getText().toString().trim().isEmpty()) {
 						System.out.println(comboBox.getSelectedItem().toString());
 						Fachada.registrarVisualizacao(link.getText(), email.getText(),
 								Integer.parseInt(comboBox.getSelectedItem().toString()));
