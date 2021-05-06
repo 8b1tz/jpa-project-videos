@@ -5,8 +5,6 @@ import java.util.List;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
-import modelo.Assunto;
-import modelo.Usuario;
 import modelo.Video;
 
 public class DAOvideo extends DAO<Video> {

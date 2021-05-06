@@ -108,6 +108,7 @@ public class TelaRegistroVisualizacao extends JFrame {
 					} else {
 						Fachada.registrarVisualizacao(link.getText(),
 								Integer.parseInt(comboBox.getSelectedItem().toString()));
+						saida.setText("Visualização cadastrada!");
 					}
 //https://www.youtube.com/watch?v=XXYlFuWEuKI&list=RDMMXXYlFuWEuKI&start_radio=1
 				} catch (Exception e1) {
