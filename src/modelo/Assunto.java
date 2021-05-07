@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 @Entity
 @Table (name = "assunto20191370003")
@@ -19,7 +20,8 @@ public class Assunto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String palavra;
-	private String versao;
+	@Version
+	private int versao;
 	
 
 	@ManyToMany(cascade={CascadeType.ALL})

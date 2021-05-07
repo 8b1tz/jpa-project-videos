@@ -1,5 +1,6 @@
 package modelo;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 import org.hibernate.engine.internal.CascadePoint;
 
@@ -23,7 +25,8 @@ public class Video {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String versao;
+	@Version
+	private int versao;
 	private String link;
 	private String nome;
 	private double media;
@@ -88,10 +91,14 @@ public class Video {
 
 	public void fazerMedia() {
 		double soma = 0;
+		String aux = "";
+		
 		for (Visualizacao v : visualizacoes) {
 			soma += v.getNota();
 		}
-		this.media = soma / visualizacoes.size();
+		
+		aux = String.format("%.2f",(soma / visualizacoes.size())).replace(",",".");
+		this.media = Double.parseDouble(aux);
 
 	}
 

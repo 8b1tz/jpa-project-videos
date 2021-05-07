@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 import dao.TriggerListener;
 
@@ -26,7 +27,8 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String email;
-	private String versao;
+	@Version
+	private int versao;
 	
 	@OneToMany(mappedBy = "usuario")
 	private List<Visualizacao> visualizacoes = new ArrayList<>();

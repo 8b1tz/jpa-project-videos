@@ -1,8 +1,10 @@
 package modelo;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Random;
 
 import javax.persistence.CascadeType;
@@ -13,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 import  java.util.Random;
 import dao.TriggerListener;
@@ -25,10 +28,11 @@ public class Visualizacao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private LocalDate datahora = LocalDateTime.now().minusDays(5).toLocalDate();
+	private LocalDateTime datahora =  LocalDateTime.now().minusHours(5).minusMinutes(15).minusSeconds(40);
 	private int nota;
-	private String versao;
-	private int idade;
+	@Version
+	private int versao;
+	private String idade;
 	
 
 	@ManyToOne(cascade={CascadeType.ALL})
@@ -74,20 +78,19 @@ public class Visualizacao {
 		return nota;
 	}
 	
-
-	public LocalDate getDatahora() {
+	public LocalDateTime getDatahora() {
 		return datahora;
 	}
 
-	public void setDatahora(LocalDate datahora) {
+	public void setDatahora(LocalDateTime datahora) {
 		this.datahora = datahora;
 	}
 
-	public int getIdade() {
+	public String getIdade() {
 		return idade;
 	}
 
-	public void setIdade(int idade) {
+	public void setIdade(String idade) {
 		this.idade = idade;
 	}
 
