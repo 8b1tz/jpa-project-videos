@@ -1,4 +1,11 @@
-<h1> Projeto JPA </h1>
+<h1> Projeto 3 de Persistência de Objetos 2020.2</h1>
+
+<h2>
+Alunas:  <br> 
+  - Yohanna de Oliveira Cavalcanti <br> 
+  - Ana Julia Oliveira Lins
+
+</h2>
 
 Implementação:<br>
 • Implementar o primeiro projeto para usar um banco relacional:<br>
