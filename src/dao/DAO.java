@@ -59,8 +59,9 @@ public abstract class DAO<T> implements DAOInterface<T> {
 		 *****************************************************************************/
 		ip = dados.getProperty("ip");
 		Properties prop = new Properties();
-		prop.setProperty("javax.persistence.jdbc.url", "jdbc:postgresql://127.0.0.1:5432/projeto3");
+		prop.setProperty("javax.persistence.jdbc.url", "jdbc:postgresql://" + ip + ":5432/projeto3");
 		log.info("url= " + prop.getProperty("javax.persistence.jdbc.url"));
+		//54.94.169.84
 		factory = Persistence.createEntityManagerFactory(nomeUnidadePersistencia, prop);
 		manager = factory.createEntityManager();
 	}
