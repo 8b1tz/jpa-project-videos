@@ -9,6 +9,7 @@ public class Apagar {
 			Fachada.inicializar();
 			try {
 				Fachada.apagarVisualizacao(1);
+				Fachada.apagarVisualizacao(12);
 				System.out.println("Apagando visualização de id 1");
 			} catch (Exception e) {
 				System.out.println(e.getMessage());

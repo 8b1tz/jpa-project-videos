@@ -91,11 +91,4 @@ public class TriggerListener{
 	
 	}
 
-	/*
-	 * 	public int calcularIdade(Visualizacao p) {
-		LocalDate hoje = LocalDate.now();
-		Period per = Period.between(p.getDatahora(), hoje);
-		int idade = per.getDays();
-		return idade;
-	}*/
 }

@@ -1,0 +1,597 @@
+20:15:29,716  INFO DAO:50 - processando a unidade de persistencia: hibernate-postgres
+20:15:29,721  INFO DAO:63 - url= jdbc:postgresql://54.232.29.15:5432/projeto3
+20:15:29,771 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+20:15:30,414 DEBUG BasicTypeRegistry:157 - Adding type registration boolean -> org.hibernate.type.BooleanType@703ba4b7
+20:15:30,415 DEBUG BasicTypeRegistry:157 - Adding type registration boolean -> org.hibernate.type.BooleanType@703ba4b7
+20:15:30,415 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@703ba4b7
+20:15:30,416 DEBUG BasicTypeRegistry:157 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@122f3744
+20:15:30,416 DEBUG BasicTypeRegistry:157 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@6f3fbe40
+20:15:30,417 DEBUG BasicTypeRegistry:157 - Adding type registration yes_no -> org.hibernate.type.YesNoType@67657c87
+20:15:30,418 DEBUG BasicTypeRegistry:157 - Adding type registration byte -> org.hibernate.type.ByteType@647e2b84
+20:15:30,418 DEBUG BasicTypeRegistry:157 - Adding type registration byte -> org.hibernate.type.ByteType@647e2b84
+20:15:30,418 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@647e2b84
+20:15:30,419 DEBUG BasicTypeRegistry:157 - Adding type registration character -> org.hibernate.type.CharacterType@3bb70da7
+20:15:30,420 DEBUG BasicTypeRegistry:157 - Adding type registration char -> org.hibernate.type.CharacterType@3bb70da7
+20:15:30,420 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@3bb70da7
+20:15:30,421 DEBUG BasicTypeRegistry:157 - Adding type registration short -> org.hibernate.type.ShortType@41b9678c
+20:15:30,422 DEBUG BasicTypeRegistry:157 - Adding type registration short -> org.hibernate.type.ShortType@41b9678c
+20:15:30,422 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@41b9678c
+20:15:30,423 DEBUG BasicTypeRegistry:157 - Adding type registration integer -> org.hibernate.type.IntegerType@4a7003a2
+20:15:30,424 DEBUG BasicTypeRegistry:157 - Adding type registration int -> org.hibernate.type.IntegerType@4a7003a2
+20:15:30,424 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@4a7003a2
+20:15:30,425 DEBUG BasicTypeRegistry:157 - Adding type registration long -> org.hibernate.type.LongType@4cd356d
+20:15:30,425 DEBUG BasicTypeRegistry:157 - Adding type registration long -> org.hibernate.type.LongType@4cd356d
+20:15:30,425 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@4cd356d
+20:15:30,426 DEBUG BasicTypeRegistry:157 - Adding type registration float -> org.hibernate.type.FloatType@2fefc055
+20:15:30,426 DEBUG BasicTypeRegistry:157 - Adding type registration float -> org.hibernate.type.FloatType@2fefc055
+20:15:30,426 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@2fefc055
+20:15:30,427 DEBUG BasicTypeRegistry:157 - Adding type registration double -> org.hibernate.type.DoubleType@256f598b
+20:15:30,427 DEBUG BasicTypeRegistry:157 - Adding type registration double -> org.hibernate.type.DoubleType@256f598b
+20:15:30,428 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@256f598b
+20:15:30,429 DEBUG BasicTypeRegistry:157 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@435f5671
+20:15:30,429 DEBUG BasicTypeRegistry:157 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@435f5671
+20:15:30,430 DEBUG BasicTypeRegistry:157 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@7f904fdb
+20:15:30,430 DEBUG BasicTypeRegistry:157 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@7f904fdb
+20:15:30,431 DEBUG BasicTypeRegistry:157 - Adding type registration string -> org.hibernate.type.StringType@65da12b1
+20:15:30,431 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.String -> org.hibernate.type.StringType@65da12b1
+20:15:30,432 DEBUG BasicTypeRegistry:157 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@62923d15
+20:15:30,432 DEBUG BasicTypeRegistry:157 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@5333d2eb
+20:15:30,433 DEBUG BasicTypeRegistry:157 - Adding type registration url -> org.hibernate.type.UrlType@6a00e9c0
+20:15:30,433 DEBUG BasicTypeRegistry:157 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@6a00e9c0
+20:15:30,434 DEBUG BasicTypeRegistry:157 - Adding type registration Duration -> org.hibernate.type.DurationType@76003d66
+20:15:30,435 DEBUG BasicTypeRegistry:157 - Adding type registration java.time.Duration -> org.hibernate.type.DurationType@76003d66
+20:15:30,438 DEBUG BasicTypeRegistry:157 - Adding type registration Instant -> org.hibernate.type.InstantType@35ed7a2c
+20:15:30,438 DEBUG BasicTypeRegistry:157 - Adding type registration java.time.Instant -> org.hibernate.type.InstantType@35ed7a2c
+20:15:30,440 DEBUG BasicTypeRegistry:157 - Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@5735fe5d
+20:15:30,440 DEBUG BasicTypeRegistry:157 - Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@5735fe5d
+20:15:30,441 DEBUG BasicTypeRegistry:157 - Adding type registration LocalDate -> org.hibernate.type.LocalDateType@41560895
+20:15:30,441 DEBUG BasicTypeRegistry:157 - Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@41560895
+20:15:30,442 DEBUG BasicTypeRegistry:157 - Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@6ad26d0c
+20:15:30,442 DEBUG BasicTypeRegistry:157 - Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@6ad26d0c
+20:15:30,443 DEBUG BasicTypeRegistry:157 - Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@1af37ce5
+20:15:30,444 DEBUG BasicTypeRegistry:157 - Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@1af37ce5
+20:15:30,445 DEBUG BasicTypeRegistry:157 - Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@78f23b2
+20:15:30,445 DEBUG BasicTypeRegistry:157 - Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@78f23b2
+20:15:30,446 DEBUG BasicTypeRegistry:157 - Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@26b73b31
+20:15:30,446 DEBUG BasicTypeRegistry:157 - Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@26b73b31
+20:15:30,447 DEBUG BasicTypeRegistry:157 - Adding type registration date -> org.hibernate.type.DateType@b958248
+20:15:30,447 DEBUG BasicTypeRegistry:157 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@b958248
+20:15:30,448 DEBUG BasicTypeRegistry:157 - Adding type registration time -> org.hibernate.type.TimeType@3861d774
+20:15:30,449 DEBUG BasicTypeRegistry:157 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@3861d774
+20:15:30,450 DEBUG BasicTypeRegistry:157 - Adding type registration timestamp -> org.hibernate.type.TimestampType@743aa778
+20:15:30,450 DEBUG BasicTypeRegistry:157 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@743aa778
+20:15:30,451 DEBUG BasicTypeRegistry:157 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@743aa778
+20:15:30,452 DEBUG BasicTypeRegistry:157 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@40d4792b
+20:15:30,453 DEBUG BasicTypeRegistry:157 - Adding type registration calendar -> org.hibernate.type.CalendarType@63e8fd1c
+20:15:30,453 DEBUG BasicTypeRegistry:157 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@63e8fd1c
+20:15:30,453 DEBUG BasicTypeRegistry:157 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@63e8fd1c
+20:15:30,454 DEBUG BasicTypeRegistry:157 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@5c724d53
+20:15:30,454 DEBUG BasicTypeRegistry:157 - Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@18ab0436
+20:15:30,455 DEBUG BasicTypeRegistry:157 - Adding type registration locale -> org.hibernate.type.LocaleType@4b0ceaf3
+20:15:30,455 DEBUG BasicTypeRegistry:157 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@4b0ceaf3
+20:15:30,456 DEBUG BasicTypeRegistry:157 - Adding type registration currency -> org.hibernate.type.CurrencyType@3534a14b
+20:15:30,456 DEBUG BasicTypeRegistry:157 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@3534a14b
+20:15:30,457 DEBUG BasicTypeRegistry:157 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@31a91065
+20:15:30,457 DEBUG BasicTypeRegistry:157 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@31a91065
+20:15:30,458 DEBUG BasicTypeRegistry:157 - Adding type registration class -> org.hibernate.type.ClassType@1c59fd59
+20:15:30,458 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@1c59fd59
+20:15:30,459 DEBUG BasicTypeRegistry:157 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@3993ca40
+20:15:30,459 DEBUG BasicTypeRegistry:157 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@3993ca40
+20:15:30,460 DEBUG BasicTypeRegistry:157 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@45356107
+20:15:30,461 DEBUG BasicTypeRegistry:157 - Adding type registration binary -> org.hibernate.type.BinaryType@5f6ecc03
+20:15:30,461 DEBUG BasicTypeRegistry:157 - Adding type registration byte[] -> org.hibernate.type.BinaryType@5f6ecc03
+20:15:30,461 DEBUG BasicTypeRegistry:157 - Adding type registration [B -> org.hibernate.type.BinaryType@5f6ecc03
+20:15:30,462 DEBUG BasicTypeRegistry:157 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@23f58ea1
+20:15:30,462 DEBUG BasicTypeRegistry:157 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@23f58ea1
+20:15:30,462 DEBUG BasicTypeRegistry:157 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@23f58ea1
+20:15:30,463 DEBUG BasicTypeRegistry:157 - Adding type registration row_version -> org.hibernate.type.RowVersionType@3357551f
+20:15:30,464 DEBUG BasicTypeRegistry:157 - Adding type registration image -> org.hibernate.type.ImageType@27e7cc28
+20:15:30,464 DEBUG BasicTypeRegistry:157 - Adding type registration characters -> org.hibernate.type.CharArrayType@76f7eb7
+20:15:30,465 DEBUG BasicTypeRegistry:157 - Adding type registration char[] -> org.hibernate.type.CharArrayType@76f7eb7
+20:15:30,465 DEBUG BasicTypeRegistry:157 - Adding type registration [C -> org.hibernate.type.CharArrayType@76f7eb7
+20:15:30,466 DEBUG BasicTypeRegistry:157 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@7e2eb7a0
+20:15:30,466 DEBUG BasicTypeRegistry:157 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@7e2eb7a0
+20:15:30,466 DEBUG BasicTypeRegistry:157 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@7e2eb7a0
+20:15:30,466 DEBUG BasicTypeRegistry:157 - Adding type registration text -> org.hibernate.type.TextType@51c83513
+20:15:30,467 DEBUG BasicTypeRegistry:157 - Adding type registration ntext -> org.hibernate.type.NTextType@39ee3221
+20:15:30,468 DEBUG BasicTypeRegistry:157 - Adding type registration blob -> org.hibernate.type.BlobType@d636adc
+20:15:30,468 DEBUG BasicTypeRegistry:157 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@d636adc
+20:15:30,469 DEBUG BasicTypeRegistry:157 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@45fca74e
+20:15:30,470 DEBUG BasicTypeRegistry:157 - Adding type registration clob -> org.hibernate.type.ClobType@1e2f68d0
+20:15:30,470 DEBUG BasicTypeRegistry:157 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@1e2f68d0
+20:15:30,471 DEBUG BasicTypeRegistry:157 - Adding type registration nclob -> org.hibernate.type.NClobType@485fbdee
+20:15:30,471 DEBUG BasicTypeRegistry:157 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@485fbdee
+20:15:30,472 DEBUG BasicTypeRegistry:157 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@55088fca
+20:15:30,473 DEBUG BasicTypeRegistry:157 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@2fdd579b
+20:15:30,474 DEBUG BasicTypeRegistry:157 - Adding type registration serializable -> org.hibernate.type.SerializableType@9658b42
+20:15:30,476 DEBUG BasicTypeRegistry:157 - Adding type registration object -> org.hibernate.type.ObjectType@1cd21e0c
+20:15:30,476 DEBUG BasicTypeRegistry:157 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@1cd21e0c
+20:15:30,477 DEBUG BasicTypeRegistry:157 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@5b1f8cb6
+20:15:30,477 DEBUG BasicTypeRegistry:157 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@5646c1d7
+20:15:30,477 DEBUG BasicTypeRegistry:157 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@256170b0
+20:15:30,477 DEBUG BasicTypeRegistry:157 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@7c585ef4
+20:15:30,478 DEBUG BasicTypeRegistry:157 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@5b8507f5
+20:15:30,478 DEBUG BasicTypeRegistry:157 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@3b2d3d2b
+20:15:30,478 DEBUG BasicTypeRegistry:157 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@15e73e0e
+20:15:30,478 DEBUG BasicTypeRegistry:157 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@2b767db8
+20:15:32,228 DEBUG BasicTypeRegistry:157 - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@cec1a08
+20:15:32,229 DEBUG BasicTypeRegistry:157 - Adding type registration java.util.UUID -> org.hibernate.type.PostgresUUIDType@cec1a08
+20:15:32,229 DEBUG BasicTypeRegistry:160 - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@3993ca40
+20:15:32,231 DEBUG TypeConfiguration$Scope:152 - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@2e40117c] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@757d3d6f]
+20:15:32,460 DEBUG TypeConfiguration$Scope:157 - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@2e40117c] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@3cf36c2]
+20:15:33,979 TRACE TypeConfiguration$Scope:205 - Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@3cf36c2] for TypeConfiguration
+20:15:44,047 DEBUG SQL:144 - select video0_.id as id1_3_, video0_.link as link2_3_, video0_.media as media3_3_, video0_.nome as nome4_3_, video0_.versao as versao5_3_ from video20191370002 video0_ where video0_.link=?
+20:15:44,049 TRACE BasicBinder:64 - binding parameter [1] as [VARCHAR] - [testeB]
+20:15:44,132 DEBUG SQL:144 - select assunto0_.id as id1_0_, assunto0_.palavra as palavra2_0_, assunto0_.versao as versao3_0_ from assunto20191370003 assunto0_ where assunto0_.palavra=?
+20:15:44,132 TRACE BasicBinder:64 - binding parameter [1] as [VARCHAR] - [testeB]
+20:15:44,227 DEBUG SQL:144 - insert into video20191370002 (link, media, nome, versao) values (?, ?, ?, ?)
+20:15:44,228 TRACE BasicBinder:64 - binding parameter [1] as [VARCHAR] - [testeB]
+20:15:44,228 TRACE BasicBinder:64 - binding parameter [2] as [DOUBLE] - [0.0]
+20:15:44,228 TRACE BasicBinder:64 - binding parameter [3] as [VARCHAR] - [testeB]
+20:15:44,229 TRACE BasicBinder:64 - binding parameter [4] as [INTEGER] - [0]
+20:15:44,311 DEBUG SQL:144 - insert into assunto20191370003 (palavra, versao) values (?, ?)
+20:15:44,311 TRACE BasicBinder:64 - binding parameter [1] as [VARCHAR] - [testeB]
+20:15:44,311 TRACE BasicBinder:64 - binding parameter [2] as [INTEGER] - [0]
+20:15:44,409 DEBUG SQL:144 - insert into assunto20191370003_video20191370002 (assuntos_id, videos_id) values (?, ?)
+20:15:44,409 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [9]
+20:15:44,410 TRACE BasicBinder:64 - binding parameter [2] as [INTEGER] - [16]
+20:15:49,520 DEBUG SQL:144 - select video0_.id as id1_3_, video0_.link as link2_3_, video0_.media as media3_3_, video0_.nome as nome4_3_, video0_.versao as versao5_3_ from video20191370002 video0_
+20:15:49,600 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [2]
+20:15:49,602 TRACE BasicExtractor:60 - extracted value ([link2_3_] : [VARCHAR]) - [teste]
+20:15:49,602 TRACE BasicExtractor:60 - extracted value ([media3_3_] : [DOUBLE]) - [0.0]
+20:15:49,603 TRACE BasicExtractor:60 - extracted value ([nome4_3_] : [VARCHAR]) - [teste]
+20:15:49,603 TRACE BasicExtractor:60 - extracted value ([versao5_3_] : [INTEGER]) - [0]
+20:15:49,603 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [4]
+20:15:49,603 TRACE BasicExtractor:60 - extracted value ([link2_3_] : [VARCHAR]) - [https://www.youtube.com/watch?v=0-7IHOXkiV8&list=RDMMXXYlFuWEuKI&index=2]
+20:15:49,603 TRACE BasicExtractor:60 - extracted value ([media3_3_] : [DOUBLE]) - [0.0]
+20:15:49,603 TRACE BasicExtractor:60 - extracted value ([nome4_3_] : [VARCHAR]) - [KALEO - Way Down We Go]
+20:15:49,604 TRACE BasicExtractor:60 - extracted value ([versao5_3_] : [INTEGER]) - [0]
+20:15:49,604 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [6]
+20:15:49,604 TRACE BasicExtractor:60 - extracted value ([link2_3_] : [VARCHAR]) - [https://www.youtube.com/watch?v=KlIL63MeyMY]
+20:15:49,604 TRACE BasicExtractor:60 - extracted value ([media3_3_] : [DOUBLE]) - [0.0]
+20:15:49,604 TRACE BasicExtractor:60 - extracted value ([nome4_3_] : [VARCHAR]) - [Curso POO Teoria  - Aula - 01A]
+20:15:49,604 TRACE BasicExtractor:60 - extracted value ([versao5_3_] : [INTEGER]) - [0]
+20:15:49,604 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [9]
+20:15:49,605 TRACE BasicExtractor:60 - extracted value ([link2_3_] : [VARCHAR]) - [https://www.youtube.com/watch?v=isCh4kCeNYU&list=RDa5uQMwRMHcs&index=7]
+20:15:49,605 TRACE BasicExtractor:60 - extracted value ([media3_3_] : [DOUBLE]) - [0.0]
+20:15:49,605 TRACE BasicExtractor:60 - extracted value ([nome4_3_] : [VARCHAR]) - [Guns N' Roses - Civil War]
+20:15:49,605 TRACE BasicExtractor:60 - extracted value ([versao5_3_] : [INTEGER]) - [0]
+20:15:49,605 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [10]
+20:15:49,605 TRACE BasicExtractor:60 - extracted value ([link2_3_] : [VARCHAR]) - [https://www.youtube.com/watch?v=Zi_XLOBDo_Y&list=RDa5uQMwRMHcs&index=13]
+20:15:49,605 TRACE BasicExtractor:60 - extracted value ([media3_3_] : [DOUBLE]) - [0.0]
+20:15:49,606 TRACE BasicExtractor:60 - extracted value ([nome4_3_] : [VARCHAR]) - [Michael Jackson - Billie Jean]
+20:15:49,606 TRACE BasicExtractor:60 - extracted value ([versao5_3_] : [INTEGER]) - [0]
+20:15:49,606 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [12]
+20:15:49,606 TRACE BasicExtractor:60 - extracted value ([link2_3_] : [VARCHAR]) - [https://www.youtube.com/watch?v=gOMhN-hfMtY]
+20:15:49,606 TRACE BasicExtractor:60 - extracted value ([media3_3_] : [DOUBLE]) - [0.0]
+20:15:49,606 TRACE BasicExtractor:60 - extracted value ([nome4_3_] : [VARCHAR]) - [Eminem - Stan (Long Version) ft. Dido]
+20:15:49,607 TRACE BasicExtractor:60 - extracted value ([versao5_3_] : [INTEGER]) - [0]
+20:15:49,607 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [7]
+20:15:49,607 TRACE BasicExtractor:60 - extracted value ([link2_3_] : [VARCHAR]) - [https://www.youtube.com/watch?v=Ucyx_QPfDng&list=PLHz_AreHm4dkqe2aR0tQK74m8SFe-aGsY&index=2]
+20:15:49,608 TRACE BasicExtractor:60 - extracted value ([media3_3_] : [DOUBLE]) - [3.0]
+20:15:49,608 TRACE BasicExtractor:60 - extracted value ([nome4_3_] : [VARCHAR]) - [Curso POO Teoria  - Aula - 01B]
+20:15:49,608 TRACE BasicExtractor:60 - extracted value ([versao5_3_] : [INTEGER]) - [1]
+20:15:49,608 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [8]
+20:15:49,609 TRACE BasicExtractor:60 - extracted value ([link2_3_] : [VARCHAR]) - [https://www.youtube.com/watch?v=aR7CKNFECx0&list=PLHz_AreHm4dkqe2aR0tQK74m8SFe-aGsY&index=3]
+20:15:49,609 TRACE BasicExtractor:60 - extracted value ([media3_3_] : [DOUBLE]) - [4.5]
+20:15:49,609 TRACE BasicExtractor:60 - extracted value ([nome4_3_] : [VARCHAR]) - [Curso POO Teoria  - Aula - 02A]
+20:15:49,609 TRACE BasicExtractor:60 - extracted value ([versao5_3_] : [INTEGER]) - [2]
+20:15:49,609 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [3]
+20:15:49,609 TRACE BasicExtractor:60 - extracted value ([link2_3_] : [VARCHAR]) - [https://www.youtube.com/watch?v=XXYlFuWEuKI&list=RDMMXXYlFuWEuKI&start_radio=1]
+20:15:49,609 TRACE BasicExtractor:60 - extracted value ([media3_3_] : [DOUBLE]) - [3.5]
+20:15:49,610 TRACE BasicExtractor:60 - extracted value ([nome4_3_] : [VARCHAR]) - [the weekend - save your tears]
+20:15:49,610 TRACE BasicExtractor:60 - extracted value ([versao5_3_] : [INTEGER]) - [2]
+20:15:49,610 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [5]
+20:15:49,610 TRACE BasicExtractor:60 - extracted value ([link2_3_] : [VARCHAR]) - [https://www.youtube.com/watch?v=cHHLHGNpCSA&list=RDMMXXYlFuWEuKI&index=3]
+20:15:49,610 TRACE BasicExtractor:60 - extracted value ([media3_3_] : [DOUBLE]) - [5.0]
+20:15:49,610 TRACE BasicExtractor:60 - extracted value ([nome4_3_] : [VARCHAR]) - [Avicii - Waiting For Love]
+20:15:49,611 TRACE BasicExtractor:60 - extracted value ([versao5_3_] : [INTEGER]) - [1]
+20:15:49,611 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [13]
+20:15:49,611 TRACE BasicExtractor:60 - extracted value ([link2_3_] : [VARCHAR]) - [https://www.youtube.com/watch?v=a5uQMwRMHcs]
+20:15:49,611 TRACE BasicExtractor:60 - extracted value ([media3_3_] : [DOUBLE]) - [2.0]
+20:15:49,611 TRACE BasicExtractor:60 - extracted value ([nome4_3_] : [VARCHAR]) - [Daft Punk ft. Julian Casablancas - Instant Crush]
+20:15:49,611 TRACE BasicExtractor:60 - extracted value ([versao5_3_] : [INTEGER]) - [1]
+20:15:49,611 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [11]
+20:15:49,612 TRACE BasicExtractor:60 - extracted value ([link2_3_] : [VARCHAR]) - [https://www.youtube.com/watch?v=v2AC41dglnM&list=RDa5uQMwRMHcs&index=15]
+20:15:49,612 TRACE BasicExtractor:60 - extracted value ([media3_3_] : [DOUBLE]) - [3.0]
+20:15:49,612 TRACE BasicExtractor:60 - extracted value ([nome4_3_] : [VARCHAR]) - [AC/DC - Thunderstruck]
+20:15:49,612 TRACE BasicExtractor:60 - extracted value ([versao5_3_] : [INTEGER]) - [1]
+20:15:49,612 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [14]
+20:15:49,613 TRACE BasicExtractor:60 - extracted value ([link2_3_] : [VARCHAR]) - [https://www.youtube.com/watch?v=RQ9_TKayu9s]
+20:15:49,613 TRACE BasicExtractor:60 - extracted value ([media3_3_] : [DOUBLE]) - [4.0]
+20:15:49,613 TRACE BasicExtractor:60 - extracted value ([nome4_3_] : [VARCHAR]) - [Eminem - Cleanin' Out My Closet]
+20:15:49,613 TRACE BasicExtractor:60 - extracted value ([versao5_3_] : [INTEGER]) - [1]
+20:15:49,613 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [15]
+20:15:49,613 TRACE BasicExtractor:60 - extracted value ([link2_3_] : [VARCHAR]) - [TesteA]
+20:15:49,613 TRACE BasicExtractor:60 - extracted value ([media3_3_] : [DOUBLE]) - [4.0]
+20:15:49,614 TRACE BasicExtractor:60 - extracted value ([nome4_3_] : [VARCHAR]) - [TesteA]
+20:15:49,614 TRACE BasicExtractor:60 - extracted value ([versao5_3_] : [INTEGER]) - [1]
+20:15:49,614 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [1]
+20:15:49,614 TRACE BasicExtractor:60 - extracted value ([link2_3_] : [VARCHAR]) - [a]
+20:15:49,614 TRACE BasicExtractor:60 - extracted value ([media3_3_] : [DOUBLE]) - [4.0]
+20:15:49,615 TRACE BasicExtractor:60 - extracted value ([nome4_3_] : [VARCHAR]) - [a]
+20:15:49,615 TRACE BasicExtractor:60 - extracted value ([versao5_3_] : [INTEGER]) - [3]
+20:15:49,615 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [16]
+20:15:49,615 TRACE BasicExtractor:60 - extracted value ([link2_3_] : [VARCHAR]) - [testeB]
+20:15:49,615 TRACE BasicExtractor:60 - extracted value ([media3_3_] : [DOUBLE]) - [0.0]
+20:15:49,615 TRACE BasicExtractor:60 - extracted value ([nome4_3_] : [VARCHAR]) - [testeB]
+20:15:49,615 TRACE BasicExtractor:60 - extracted value ([versao5_3_] : [INTEGER]) - [0]
+20:15:49,618 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#2]
+20:15:49,618 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#2]
+20:15:49,619 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#4]
+20:15:49,619 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#4]
+20:15:49,619 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#6]
+20:15:49,619 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#6]
+20:15:49,619 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#9]
+20:15:49,619 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#9]
+20:15:49,619 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#10]
+20:15:49,620 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#10]
+20:15:49,620 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#12]
+20:15:49,620 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#12]
+20:15:49,620 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#7]
+20:15:49,620 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#7]
+20:15:49,620 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#8]
+20:15:49,620 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#8]
+20:15:49,620 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#3]
+20:15:49,621 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#3]
+20:15:49,621 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#5]
+20:15:49,621 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#5]
+20:15:49,621 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#13]
+20:15:49,621 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#13]
+20:15:49,621 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#11]
+20:15:49,621 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#11]
+20:15:49,622 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#14]
+20:15:49,622 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#14]
+20:15:49,622 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#15]
+20:15:49,622 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#15]
+20:15:49,622 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#1]
+20:15:49,622 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#1]
+20:15:49,622 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#16]
+20:15:49,622 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#16]
+20:15:49,701 DEBUG SQL:144 - select assuntos0_.videos_id as videos_i2_1_0_, assuntos0_.assuntos_id as assuntos1_1_0_, assunto1_.id as id1_0_1_, assunto1_.palavra as palavra2_0_1_, assunto1_.versao as versao3_0_1_ from assunto20191370003_video20191370002 assuntos0_ inner join assunto20191370003 assunto1_ on assuntos0_.assuntos_id=assunto1_.id where assuntos0_.videos_id=?
+20:15:49,701 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [2]
+20:15:49,783 TRACE BasicExtractor:60 - extracted value ([id1_0_1_] : [INTEGER]) - [2]
+20:15:49,783 TRACE BasicExtractor:60 - extracted value ([palavra2_0_1_] : [VARCHAR]) - [teste]
+20:15:49,784 TRACE BasicExtractor:60 - extracted value ([versao3_0_1_] : [INTEGER]) - [0]
+20:15:49,784 TRACE BasicExtractor:60 - extracted value ([videos_i2_1_0_] : [INTEGER]) - [2]
+20:15:49,784 TRACE BasicExtractor:60 - extracted value ([assuntos1_1_0_] : [INTEGER]) - [2]
+20:15:49,787 TRACE CollectionType:847 - Created collection wrapper: [modelo.Assunto.videos#2]
+20:15:49,788 DEBUG SQL:144 - select assuntos0_.videos_id as videos_i2_1_0_, assuntos0_.assuntos_id as assuntos1_1_0_, assunto1_.id as id1_0_1_, assunto1_.palavra as palavra2_0_1_, assunto1_.versao as versao3_0_1_ from assunto20191370003_video20191370002 assuntos0_ inner join assunto20191370003 assunto1_ on assuntos0_.assuntos_id=assunto1_.id where assuntos0_.videos_id=?
+20:15:49,788 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [4]
+20:15:49,866 TRACE BasicExtractor:60 - extracted value ([id1_0_1_] : [INTEGER]) - [4]
+20:15:49,866 TRACE BasicExtractor:60 - extracted value ([palavra2_0_1_] : [VARCHAR]) - [rock]
+20:15:49,867 TRACE BasicExtractor:60 - extracted value ([versao3_0_1_] : [INTEGER]) - [2]
+20:15:49,867 TRACE BasicExtractor:60 - extracted value ([videos_i2_1_0_] : [INTEGER]) - [4]
+20:15:49,867 TRACE BasicExtractor:60 - extracted value ([assuntos1_1_0_] : [INTEGER]) - [4]
+20:15:49,867 TRACE CollectionType:847 - Created collection wrapper: [modelo.Assunto.videos#4]
+20:15:49,867 DEBUG SQL:144 - select assuntos0_.videos_id as videos_i2_1_0_, assuntos0_.assuntos_id as assuntos1_1_0_, assunto1_.id as id1_0_1_, assunto1_.palavra as palavra2_0_1_, assunto1_.versao as versao3_0_1_ from assunto20191370003_video20191370002 assuntos0_ inner join assunto20191370003 assunto1_ on assuntos0_.assuntos_id=assunto1_.id where assuntos0_.videos_id=?
+20:15:49,868 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [6]
+20:15:49,950 TRACE BasicExtractor:60 - extracted value ([id1_0_1_] : [INTEGER]) - [6]
+20:15:49,950 TRACE BasicExtractor:60 - extracted value ([palavra2_0_1_] : [VARCHAR]) - [aula]
+20:15:49,950 TRACE BasicExtractor:60 - extracted value ([versao3_0_1_] : [INTEGER]) - [2]
+20:15:49,950 TRACE BasicExtractor:60 - extracted value ([videos_i2_1_0_] : [INTEGER]) - [6]
+20:15:49,951 TRACE BasicExtractor:60 - extracted value ([assuntos1_1_0_] : [INTEGER]) - [6]
+20:15:49,951 TRACE CollectionType:847 - Created collection wrapper: [modelo.Assunto.videos#6]
+20:15:49,951 DEBUG SQL:144 - select assuntos0_.videos_id as videos_i2_1_0_, assuntos0_.assuntos_id as assuntos1_1_0_, assunto1_.id as id1_0_1_, assunto1_.palavra as palavra2_0_1_, assunto1_.versao as versao3_0_1_ from assunto20191370003_video20191370002 assuntos0_ inner join assunto20191370003 assunto1_ on assuntos0_.assuntos_id=assunto1_.id where assuntos0_.videos_id=?
+20:15:49,951 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [9]
+20:15:50,029 TRACE BasicExtractor:60 - extracted value ([id1_0_1_] : [INTEGER]) - [4]
+20:15:50,030 TRACE BasicExtractor:60 - extracted value ([videos_i2_1_0_] : [INTEGER]) - [9]
+20:15:50,030 TRACE BasicExtractor:60 - extracted value ([assuntos1_1_0_] : [INTEGER]) - [4]
+20:15:50,030 DEBUG SQL:144 - select assuntos0_.videos_id as videos_i2_1_0_, assuntos0_.assuntos_id as assuntos1_1_0_, assunto1_.id as id1_0_1_, assunto1_.palavra as palavra2_0_1_, assunto1_.versao as versao3_0_1_ from assunto20191370003_video20191370002 assuntos0_ inner join assunto20191370003 assunto1_ on assuntos0_.assuntos_id=assunto1_.id where assuntos0_.videos_id=?
+20:15:50,030 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [10]
+20:15:50,108 TRACE BasicExtractor:60 - extracted value ([id1_0_1_] : [INTEGER]) - [3]
+20:15:50,109 TRACE BasicExtractor:60 - extracted value ([palavra2_0_1_] : [VARCHAR]) - [pop]
+20:15:50,109 TRACE BasicExtractor:60 - extracted value ([versao3_0_1_] : [INTEGER]) - [1]
+20:15:50,109 TRACE BasicExtractor:60 - extracted value ([videos_i2_1_0_] : [INTEGER]) - [10]
+20:15:50,109 TRACE BasicExtractor:60 - extracted value ([assuntos1_1_0_] : [INTEGER]) - [3]
+20:15:50,109 TRACE CollectionType:847 - Created collection wrapper: [modelo.Assunto.videos#3]
+20:15:50,109 DEBUG SQL:144 - select assuntos0_.videos_id as videos_i2_1_0_, assuntos0_.assuntos_id as assuntos1_1_0_, assunto1_.id as id1_0_1_, assunto1_.palavra as palavra2_0_1_, assunto1_.versao as versao3_0_1_ from assunto20191370003_video20191370002 assuntos0_ inner join assunto20191370003 assunto1_ on assuntos0_.assuntos_id=assunto1_.id where assuntos0_.videos_id=?
+20:15:50,110 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [12]
+20:15:50,187 TRACE BasicExtractor:60 - extracted value ([id1_0_1_] : [INTEGER]) - [7]
+20:15:50,187 TRACE BasicExtractor:60 - extracted value ([palavra2_0_1_] : [VARCHAR]) - [rap]
+20:15:50,187 TRACE BasicExtractor:60 - extracted value ([versao3_0_1_] : [INTEGER]) - [1]
+20:15:50,187 TRACE BasicExtractor:60 - extracted value ([videos_i2_1_0_] : [INTEGER]) - [12]
+20:15:50,187 TRACE BasicExtractor:60 - extracted value ([assuntos1_1_0_] : [INTEGER]) - [7]
+20:15:50,187 TRACE CollectionType:847 - Created collection wrapper: [modelo.Assunto.videos#7]
+20:15:50,188 DEBUG SQL:144 - select assuntos0_.videos_id as videos_i2_1_0_, assuntos0_.assuntos_id as assuntos1_1_0_, assunto1_.id as id1_0_1_, assunto1_.palavra as palavra2_0_1_, assunto1_.versao as versao3_0_1_ from assunto20191370003_video20191370002 assuntos0_ inner join assunto20191370003 assunto1_ on assuntos0_.assuntos_id=assunto1_.id where assuntos0_.videos_id=?
+20:15:50,188 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [7]
+20:15:50,266 TRACE BasicExtractor:60 - extracted value ([id1_0_1_] : [INTEGER]) - [6]
+20:15:50,266 TRACE BasicExtractor:60 - extracted value ([videos_i2_1_0_] : [INTEGER]) - [7]
+20:15:50,266 TRACE BasicExtractor:60 - extracted value ([assuntos1_1_0_] : [INTEGER]) - [6]
+20:15:50,267 DEBUG SQL:144 - select assuntos0_.videos_id as videos_i2_1_0_, assuntos0_.assuntos_id as assuntos1_1_0_, assunto1_.id as id1_0_1_, assunto1_.palavra as palavra2_0_1_, assunto1_.versao as versao3_0_1_ from assunto20191370003_video20191370002 assuntos0_ inner join assunto20191370003 assunto1_ on assuntos0_.assuntos_id=assunto1_.id where assuntos0_.videos_id=?
+20:15:50,267 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [8]
+20:15:50,346 TRACE BasicExtractor:60 - extracted value ([id1_0_1_] : [INTEGER]) - [6]
+20:15:50,346 TRACE BasicExtractor:60 - extracted value ([videos_i2_1_0_] : [INTEGER]) - [8]
+20:15:50,346 TRACE BasicExtractor:60 - extracted value ([assuntos1_1_0_] : [INTEGER]) - [6]
+20:15:50,347 DEBUG SQL:144 - select assuntos0_.videos_id as videos_i2_1_0_, assuntos0_.assuntos_id as assuntos1_1_0_, assunto1_.id as id1_0_1_, assunto1_.palavra as palavra2_0_1_, assunto1_.versao as versao3_0_1_ from assunto20191370003_video20191370002 assuntos0_ inner join assunto20191370003 assunto1_ on assuntos0_.assuntos_id=assunto1_.id where assuntos0_.videos_id=?
+20:15:50,347 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [3]
+20:15:50,423 TRACE BasicExtractor:60 - extracted value ([id1_0_1_] : [INTEGER]) - [3]
+20:15:50,423 TRACE BasicExtractor:60 - extracted value ([videos_i2_1_0_] : [INTEGER]) - [3]
+20:15:50,423 TRACE BasicExtractor:60 - extracted value ([assuntos1_1_0_] : [INTEGER]) - [3]
+20:15:50,424 DEBUG SQL:144 - select assuntos0_.videos_id as videos_i2_1_0_, assuntos0_.assuntos_id as assuntos1_1_0_, assunto1_.id as id1_0_1_, assunto1_.palavra as palavra2_0_1_, assunto1_.versao as versao3_0_1_ from assunto20191370003_video20191370002 assuntos0_ inner join assunto20191370003 assunto1_ on assuntos0_.assuntos_id=assunto1_.id where assuntos0_.videos_id=?
+20:15:50,424 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [5]
+20:15:50,502 TRACE BasicExtractor:60 - extracted value ([id1_0_1_] : [INTEGER]) - [5]
+20:15:50,502 TRACE BasicExtractor:60 - extracted value ([palavra2_0_1_] : [VARCHAR]) - [eletronica]
+20:15:50,502 TRACE BasicExtractor:60 - extracted value ([versao3_0_1_] : [INTEGER]) - [1]
+20:15:50,502 TRACE BasicExtractor:60 - extracted value ([videos_i2_1_0_] : [INTEGER]) - [5]
+20:15:50,503 TRACE BasicExtractor:60 - extracted value ([assuntos1_1_0_] : [INTEGER]) - [5]
+20:15:50,503 TRACE CollectionType:847 - Created collection wrapper: [modelo.Assunto.videos#5]
+20:15:50,503 DEBUG SQL:144 - select assuntos0_.videos_id as videos_i2_1_0_, assuntos0_.assuntos_id as assuntos1_1_0_, assunto1_.id as id1_0_1_, assunto1_.palavra as palavra2_0_1_, assunto1_.versao as versao3_0_1_ from assunto20191370003_video20191370002 assuntos0_ inner join assunto20191370003 assunto1_ on assuntos0_.assuntos_id=assunto1_.id where assuntos0_.videos_id=?
+20:15:50,503 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [13]
+20:15:50,580 TRACE BasicExtractor:60 - extracted value ([id1_0_1_] : [INTEGER]) - [5]
+20:15:50,580 TRACE BasicExtractor:60 - extracted value ([videos_i2_1_0_] : [INTEGER]) - [13]
+20:15:50,580 TRACE BasicExtractor:60 - extracted value ([assuntos1_1_0_] : [INTEGER]) - [5]
+20:15:50,581 DEBUG SQL:144 - select assuntos0_.videos_id as videos_i2_1_0_, assuntos0_.assuntos_id as assuntos1_1_0_, assunto1_.id as id1_0_1_, assunto1_.palavra as palavra2_0_1_, assunto1_.versao as versao3_0_1_ from assunto20191370003_video20191370002 assuntos0_ inner join assunto20191370003 assunto1_ on assuntos0_.assuntos_id=assunto1_.id where assuntos0_.videos_id=?
+20:15:50,581 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [11]
+20:15:50,658 TRACE BasicExtractor:60 - extracted value ([id1_0_1_] : [INTEGER]) - [4]
+20:15:50,658 TRACE BasicExtractor:60 - extracted value ([videos_i2_1_0_] : [INTEGER]) - [11]
+20:15:50,658 TRACE BasicExtractor:60 - extracted value ([assuntos1_1_0_] : [INTEGER]) - [4]
+20:15:50,658 DEBUG SQL:144 - select assuntos0_.videos_id as videos_i2_1_0_, assuntos0_.assuntos_id as assuntos1_1_0_, assunto1_.id as id1_0_1_, assunto1_.palavra as palavra2_0_1_, assunto1_.versao as versao3_0_1_ from assunto20191370003_video20191370002 assuntos0_ inner join assunto20191370003 assunto1_ on assuntos0_.assuntos_id=assunto1_.id where assuntos0_.videos_id=?
+20:15:50,659 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [14]
+20:15:50,736 TRACE BasicExtractor:60 - extracted value ([id1_0_1_] : [INTEGER]) - [7]
+20:15:50,736 TRACE BasicExtractor:60 - extracted value ([videos_i2_1_0_] : [INTEGER]) - [14]
+20:15:50,736 TRACE BasicExtractor:60 - extracted value ([assuntos1_1_0_] : [INTEGER]) - [7]
+20:15:50,736 DEBUG SQL:144 - select assuntos0_.videos_id as videos_i2_1_0_, assuntos0_.assuntos_id as assuntos1_1_0_, assunto1_.id as id1_0_1_, assunto1_.palavra as palavra2_0_1_, assunto1_.versao as versao3_0_1_ from assunto20191370003_video20191370002 assuntos0_ inner join assunto20191370003 assunto1_ on assuntos0_.assuntos_id=assunto1_.id where assuntos0_.videos_id=?
+20:15:50,736 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [15]
+20:15:50,813 TRACE BasicExtractor:60 - extracted value ([id1_0_1_] : [INTEGER]) - [8]
+20:15:50,814 TRACE BasicExtractor:60 - extracted value ([palavra2_0_1_] : [VARCHAR]) - [TesteA]
+20:15:50,814 TRACE BasicExtractor:60 - extracted value ([versao3_0_1_] : [INTEGER]) - [0]
+20:15:50,814 TRACE BasicExtractor:60 - extracted value ([videos_i2_1_0_] : [INTEGER]) - [15]
+20:15:50,814 TRACE BasicExtractor:60 - extracted value ([assuntos1_1_0_] : [INTEGER]) - [8]
+20:15:50,814 TRACE CollectionType:847 - Created collection wrapper: [modelo.Assunto.videos#8]
+20:15:50,815 DEBUG SQL:144 - select assuntos0_.videos_id as videos_i2_1_0_, assuntos0_.assuntos_id as assuntos1_1_0_, assunto1_.id as id1_0_1_, assunto1_.palavra as palavra2_0_1_, assunto1_.versao as versao3_0_1_ from assunto20191370003_video20191370002 assuntos0_ inner join assunto20191370003 assunto1_ on assuntos0_.assuntos_id=assunto1_.id where assuntos0_.videos_id=?
+20:15:50,815 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [1]
+20:15:50,891 TRACE BasicExtractor:60 - extracted value ([id1_0_1_] : [INTEGER]) - [1]
+20:15:50,891 TRACE BasicExtractor:60 - extracted value ([palavra2_0_1_] : [VARCHAR]) - [a]
+20:15:50,891 TRACE BasicExtractor:60 - extracted value ([versao3_0_1_] : [INTEGER]) - [0]
+20:15:50,892 TRACE BasicExtractor:60 - extracted value ([videos_i2_1_0_] : [INTEGER]) - [1]
+20:15:50,892 TRACE BasicExtractor:60 - extracted value ([assuntos1_1_0_] : [INTEGER]) - [1]
+20:15:50,892 TRACE CollectionType:847 - Created collection wrapper: [modelo.Assunto.videos#1]
+20:15:50,892 DEBUG SQL:144 - select assuntos0_.videos_id as videos_i2_1_0_, assuntos0_.assuntos_id as assuntos1_1_0_, assunto1_.id as id1_0_1_, assunto1_.palavra as palavra2_0_1_, assunto1_.versao as versao3_0_1_ from assunto20191370003_video20191370002 assuntos0_ inner join assunto20191370003 assunto1_ on assuntos0_.assuntos_id=assunto1_.id where assuntos0_.videos_id=?
+20:15:50,892 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [16]
+20:15:50,971 TRACE BasicExtractor:60 - extracted value ([id1_0_1_] : [INTEGER]) - [9]
+20:15:50,971 TRACE BasicExtractor:60 - extracted value ([palavra2_0_1_] : [VARCHAR]) - [testeB]
+20:15:50,971 TRACE BasicExtractor:60 - extracted value ([versao3_0_1_] : [INTEGER]) - [0]
+20:15:50,971 TRACE BasicExtractor:60 - extracted value ([videos_i2_1_0_] : [INTEGER]) - [16]
+20:15:50,971 TRACE BasicExtractor:60 - extracted value ([assuntos1_1_0_] : [INTEGER]) - [9]
+20:15:50,972 TRACE CollectionType:847 - Created collection wrapper: [modelo.Assunto.videos#9]
+20:16:00,282 DEBUG SQL:144 - select assunto0_.id as id1_0_, assunto0_.palavra as palavra2_0_, assunto0_.versao as versao3_0_ from assunto20191370003 assunto0_
+20:16:00,360 TRACE BasicExtractor:60 - extracted value ([id1_0_] : [INTEGER]) - [1]
+20:16:00,360 TRACE BasicExtractor:60 - extracted value ([id1_0_] : [INTEGER]) - [2]
+20:16:00,361 TRACE BasicExtractor:60 - extracted value ([id1_0_] : [INTEGER]) - [6]
+20:16:00,361 TRACE BasicExtractor:60 - extracted value ([id1_0_] : [INTEGER]) - [3]
+20:16:00,361 TRACE BasicExtractor:60 - extracted value ([id1_0_] : [INTEGER]) - [4]
+20:16:00,361 TRACE BasicExtractor:60 - extracted value ([id1_0_] : [INTEGER]) - [5]
+20:16:00,361 TRACE BasicExtractor:60 - extracted value ([id1_0_] : [INTEGER]) - [7]
+20:16:00,361 TRACE BasicExtractor:60 - extracted value ([id1_0_] : [INTEGER]) - [8]
+20:16:00,361 TRACE BasicExtractor:60 - extracted value ([id1_0_] : [INTEGER]) - [9]
+20:16:00,443 DEBUG SQL:144 - select video0_.id as id1_3_, video0_.link as link2_3_, video0_.media as media3_3_, video0_.nome as nome4_3_, video0_.versao as versao5_3_ from video20191370002 video0_ inner join assunto20191370003_video20191370002 assuntos1_ on video0_.id=assuntos1_.videos_id inner join assunto20191370003 assunto2_ on assuntos1_.assuntos_id=assunto2_.id where assunto2_.palavra=?
+20:16:00,443 TRACE BasicBinder:64 - binding parameter [1] as [VARCHAR] - [testeB]
+20:16:00,522 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [16]
+20:16:22,572 DEBUG SQL:144 - select video0_.id as id1_3_, video0_.link as link2_3_, video0_.media as media3_3_, video0_.nome as nome4_3_, video0_.versao as versao5_3_ from video20191370002 video0_ where video0_.link=?
+20:16:22,572 TRACE BasicBinder:64 - binding parameter [1] as [VARCHAR] - [testeB]
+20:16:22,650 TRACE BasicExtractor:60 - extracted value ([id1_3_] : [INTEGER]) - [16]
+20:16:22,653 DEBUG SQL:144 - select usuario0_.id as id1_2_, usuario0_.email as email2_2_, usuario0_.versao as versao3_2_ from usuario20191370003 usuario0_ where usuario0_.email=?
+20:16:22,654 TRACE BasicBinder:64 - binding parameter [1] as [VARCHAR] - [ana]
+20:16:22,733 DEBUG SQL:144 - insert into usuario20191370003 (email, versao) values (?, ?)
+20:16:22,733 TRACE BasicBinder:64 - binding parameter [1] as [VARCHAR] - [ana]
+20:16:22,733 TRACE BasicBinder:64 - binding parameter [2] as [INTEGER] - [0]
+20:16:22,810 DEBUG SQL:144 - select visualizac0_.video_id as video_id7_4_0_, visualizac0_.id as id1_4_0_, visualizac0_.id as id1_4_1_, visualizac0_.datahora as datahora2_4_1_, visualizac0_.idade as idade3_4_1_, visualizac0_.nota as nota4_4_1_, visualizac0_.usuario_id as usuario_6_4_1_, visualizac0_.versao as versao5_4_1_, visualizac0_.video_id as video_id7_4_1_, usuario1_.id as id1_2_2_, usuario1_.email as email2_2_2_, usuario1_.versao as versao3_2_2_ from visualizacao20191370002 visualizac0_ left outer join usuario20191370003 usuario1_ on visualizac0_.usuario_id=usuario1_.id where visualizac0_.video_id=?
+20:16:22,811 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [16]
+20:16:22,891 DEBUG SQL:144 - insert into visualizacao20191370002 (datahora, idade, nota, usuario_id, versao, video_id) values (?, ?, ?, ?, ?, ?)
+20:16:22,892 TRACE BasicBinder:64 - binding parameter [1] as [TIMESTAMP] - [2021-05-10T15:00:42.732244700]
+20:16:22,893 TRACE BasicBinder:52 - binding parameter [2] as [VARCHAR] - [null]
+20:16:22,893 TRACE BasicBinder:64 - binding parameter [3] as [INTEGER] - [4]
+20:16:22,893 TRACE BasicBinder:64 - binding parameter [4] as [INTEGER] - [8]
+20:16:22,893 TRACE BasicBinder:64 - binding parameter [5] as [INTEGER] - [0]
+20:16:22,893 TRACE BasicBinder:64 - binding parameter [6] as [INTEGER] - [16]
+20:16:22,978 DEBUG SQL:144 - update video20191370002 set link=?, media=?, nome=?, versao=? where id=? and versao=?
+20:16:22,978 TRACE BasicBinder:64 - binding parameter [1] as [VARCHAR] - [testeB]
+20:16:22,978 TRACE BasicBinder:64 - binding parameter [2] as [DOUBLE] - [4.0]
+20:16:22,979 TRACE BasicBinder:64 - binding parameter [3] as [VARCHAR] - [testeB]
+20:16:22,979 TRACE BasicBinder:64 - binding parameter [4] as [INTEGER] - [1]
+20:16:22,979 TRACE BasicBinder:64 - binding parameter [5] as [INTEGER] - [16]
+20:16:22,979 TRACE BasicBinder:64 - binding parameter [6] as [INTEGER] - [0]
+20:16:23,058 DEBUG SQL:144 - update visualizacao20191370002 set datahora=?, idade=?, nota=?, usuario_id=?, versao=?, video_id=? where id=? and versao=?
+20:16:23,058 TRACE BasicBinder:64 - binding parameter [1] as [TIMESTAMP] - [2021-05-10T15:00:42.732244700]
+20:16:23,059 TRACE BasicBinder:64 - binding parameter [2] as [VARCHAR] - [05:15:40]
+20:16:23,059 TRACE BasicBinder:64 - binding parameter [3] as [INTEGER] - [4]
+20:16:23,059 TRACE BasicBinder:64 - binding parameter [4] as [INTEGER] - [8]
+20:16:23,060 TRACE BasicBinder:64 - binding parameter [5] as [INTEGER] - [1]
+20:16:23,060 TRACE BasicBinder:64 - binding parameter [6] as [INTEGER] - [16]
+20:16:23,060 TRACE BasicBinder:64 - binding parameter [7] as [INTEGER] - [16]
+20:16:23,060 TRACE BasicBinder:64 - binding parameter [8] as [INTEGER] - [0]
+20:16:30,163 DEBUG SQL:144 - select visualizac0_.id as id1_4_, visualizac0_.datahora as datahora2_4_, visualizac0_.idade as idade3_4_, visualizac0_.nota as nota4_4_, visualizac0_.usuario_id as usuario_6_4_, visualizac0_.versao as versao5_4_, visualizac0_.video_id as video_id7_4_ from visualizacao20191370002 visualizac0_ order by visualizac0_.id
+20:16:30,242 TRACE BasicExtractor:60 - extracted value ([id1_4_] : [INTEGER]) - [3]
+20:16:30,243 TRACE BasicExtractor:60 - extracted value ([datahora2_4_] : [TIMESTAMP]) - [2021-05-10T13:19:49.990191]
+20:16:30,243 TRACE BasicExtractor:60 - extracted value ([idade3_4_] : [VARCHAR]) - [06:34:56]
+20:16:30,243 TRACE BasicExtractor:60 - extracted value ([nota4_4_] : [INTEGER]) - [5]
+20:16:30,243 TRACE BasicExtractor:60 - extracted value ([usuario_6_4_] : [INTEGER]) - [2]
+20:16:30,243 TRACE BasicExtractor:60 - extracted value ([versao5_4_] : [INTEGER]) - [4]
+20:16:30,243 TRACE BasicExtractor:60 - extracted value ([video_id7_4_] : [INTEGER]) - [8]
+20:16:30,244 TRACE BasicExtractor:60 - extracted value ([id1_4_] : [INTEGER]) - [4]
+20:16:30,244 TRACE BasicExtractor:60 - extracted value ([datahora2_4_] : [TIMESTAMP]) - [2021-05-10T13:19:50.625574]
+20:16:30,244 TRACE BasicExtractor:60 - extracted value ([idade3_4_] : [VARCHAR]) - [06:34:56]
+20:16:30,244 TRACE BasicExtractor:60 - extracted value ([nota4_4_] : [INTEGER]) - [3]
+20:16:30,244 TRACE BasicExtractor:60 - extracted value ([usuario_6_4_] : [INTEGER]) - [3]
+20:16:30,244 TRACE BasicExtractor:60 - extracted value ([versao5_4_] : [INTEGER]) - [3]
+20:16:30,244 TRACE BasicExtractor:60 - extracted value ([video_id7_4_] : [INTEGER]) - [7]
+20:16:30,245 TRACE BasicExtractor:60 - extracted value ([id1_4_] : [INTEGER]) - [5]
+20:16:30,245 TRACE BasicExtractor:60 - extracted value ([datahora2_4_] : [TIMESTAMP]) - [2021-05-10T13:19:51.254065]
+20:16:30,245 TRACE BasicExtractor:60 - extracted value ([idade3_4_] : [VARCHAR]) - [06:34:55]
+20:16:30,245 TRACE BasicExtractor:60 - extracted value ([nota4_4_] : [INTEGER]) - [4]
+20:16:30,245 TRACE BasicExtractor:60 - extracted value ([usuario_6_4_] : [INTEGER]) - [4]
+20:16:30,245 TRACE BasicExtractor:60 - extracted value ([versao5_4_] : [INTEGER]) - [3]
+20:16:30,245 TRACE BasicExtractor:60 - extracted value ([video_id7_4_] : [INTEGER]) - [8]
+20:16:30,245 TRACE BasicExtractor:60 - extracted value ([id1_4_] : [INTEGER]) - [6]
+20:16:30,246 TRACE BasicExtractor:60 - extracted value ([datahora2_4_] : [TIMESTAMP]) - [2021-05-10T13:19:51.996215]
+20:16:30,246 TRACE BasicExtractor:60 - extracted value ([idade3_4_] : [VARCHAR]) - [06:34:54]
+20:16:30,246 TRACE BasicExtractor:60 - extracted value ([nota4_4_] : [INTEGER]) - [5]
+20:16:30,246 TRACE BasicExtractor:60 - extracted value ([usuario_6_4_] : [INTEGER]) - [5]
+20:16:30,246 TRACE BasicExtractor:60 - extracted value ([versao5_4_] : [INTEGER]) - [3]
+20:16:30,246 TRACE BasicExtractor:60 - extracted value ([video_id7_4_] : [INTEGER]) - [3]
+20:16:30,246 TRACE BasicExtractor:60 - extracted value ([id1_4_] : [INTEGER]) - [7]
+20:16:30,247 TRACE BasicExtractor:60 - extracted value ([datahora2_4_] : [TIMESTAMP]) - [2021-05-10T13:19:52.627267]
+20:16:30,247 TRACE BasicExtractor:60 - extracted value ([idade3_4_] : [VARCHAR]) - [06:34:54]
+20:16:30,247 TRACE BasicExtractor:60 - extracted value ([nota4_4_] : [INTEGER]) - [2]
+20:16:30,247 TRACE BasicExtractor:60 - extracted value ([usuario_6_4_] : [INTEGER]) - [6]
+20:16:30,247 TRACE BasicExtractor:60 - extracted value ([versao5_4_] : [INTEGER]) - [3]
+20:16:30,247 TRACE BasicExtractor:60 - extracted value ([video_id7_4_] : [INTEGER]) - [3]
+20:16:30,247 TRACE BasicExtractor:60 - extracted value ([id1_4_] : [INTEGER]) - [8]
+20:16:30,248 TRACE BasicExtractor:60 - extracted value ([datahora2_4_] : [TIMESTAMP]) - [2021-05-10T13:19:53.258419]
+20:16:30,248 TRACE BasicExtractor:60 - extracted value ([idade3_4_] : [VARCHAR]) - [06:34:53]
+20:16:30,248 TRACE BasicExtractor:60 - extracted value ([nota4_4_] : [INTEGER]) - [5]
+20:16:30,248 TRACE BasicExtractor:60 - extracted value ([usuario_6_4_] : [INTEGER]) - [2]
+20:16:30,248 TRACE BasicExtractor:60 - extracted value ([versao5_4_] : [INTEGER]) - [3]
+20:16:30,248 TRACE BasicExtractor:60 - extracted value ([video_id7_4_] : [INTEGER]) - [5]
+20:16:30,249 TRACE BasicExtractor:60 - extracted value ([id1_4_] : [INTEGER]) - [9]
+20:16:30,249 TRACE BasicExtractor:60 - extracted value ([datahora2_4_] : [TIMESTAMP]) - [2021-05-10T13:19:53.897880]
+20:16:30,249 TRACE BasicExtractor:60 - extracted value ([idade3_4_] : [VARCHAR]) - [06:34:52]
+20:16:30,249 TRACE BasicExtractor:60 - extracted value ([nota4_4_] : [INTEGER]) - [2]
+20:16:30,249 TRACE BasicExtractor:60 - extracted value ([usuario_6_4_] : [INTEGER]) - [2]
+20:16:30,250 TRACE BasicExtractor:60 - extracted value ([versao5_4_] : [INTEGER]) - [3]
+20:16:30,250 TRACE BasicExtractor:60 - extracted value ([video_id7_4_] : [INTEGER]) - [13]
+20:16:30,250 TRACE BasicExtractor:60 - extracted value ([id1_4_] : [INTEGER]) - [10]
+20:16:30,250 TRACE BasicExtractor:60 - extracted value ([datahora2_4_] : [TIMESTAMP]) - [2021-05-10T13:19:54.529369]
+20:16:30,250 TRACE BasicExtractor:60 - extracted value ([idade3_4_] : [VARCHAR]) - [06:34:52]
+20:16:30,251 TRACE BasicExtractor:60 - extracted value ([nota4_4_] : [INTEGER]) - [3]
+20:16:30,251 TRACE BasicExtractor:60 - extracted value ([usuario_6_4_] : [INTEGER]) - [3]
+20:16:30,251 TRACE BasicExtractor:60 - extracted value ([versao5_4_] : [INTEGER]) - [3]
+20:16:30,251 TRACE BasicExtractor:60 - extracted value ([video_id7_4_] : [INTEGER]) - [11]
+20:16:30,251 TRACE BasicExtractor:60 - extracted value ([id1_4_] : [INTEGER]) - [11]
+20:16:30,252 TRACE BasicExtractor:60 - extracted value ([datahora2_4_] : [TIMESTAMP]) - [2021-05-10T13:19:55.153883]
+20:16:30,252 TRACE BasicExtractor:60 - extracted value ([idade3_4_] : [VARCHAR]) - [06:34:51]
+20:16:30,252 TRACE BasicExtractor:60 - extracted value ([nota4_4_] : [INTEGER]) - [4]
+20:16:30,252 TRACE BasicExtractor:60 - extracted value ([usuario_6_4_] : [INTEGER]) - [4]
+20:16:30,252 TRACE BasicExtractor:60 - extracted value ([versao5_4_] : [INTEGER]) - [3]
+20:16:30,252 TRACE BasicExtractor:60 - extracted value ([video_id7_4_] : [INTEGER]) - [14]
+20:16:30,253 TRACE BasicExtractor:60 - extracted value ([id1_4_] : [INTEGER]) - [13]
+20:16:30,253 TRACE BasicExtractor:60 - extracted value ([datahora2_4_] : [TIMESTAMP]) - [2021-05-10T14:31:56.422338]
+20:16:30,253 TRACE BasicExtractor:60 - extracted value ([idade3_4_] : [VARCHAR]) - [05:22:50]
+20:16:30,253 TRACE BasicExtractor:60 - extracted value ([nota4_4_] : [INTEGER]) - [5]
+20:16:30,253 TRACE BasicExtractor:60 - extracted value ([usuario_6_4_] : [INTEGER]) - [7]
+20:16:30,254 TRACE BasicExtractor:60 - extracted value ([versao5_4_] : [INTEGER]) - [3]
+20:16:30,254 TRACE BasicExtractor:60 - extracted value ([video_id7_4_] : [INTEGER]) - [1]
+20:16:30,254 TRACE BasicExtractor:60 - extracted value ([id1_4_] : [INTEGER]) - [15]
+20:16:30,254 TRACE BasicExtractor:60 - extracted value ([datahora2_4_] : [TIMESTAMP]) - [2021-05-10T14:39:17.211856]
+20:16:30,254 TRACE BasicExtractor:60 - extracted value ([idade3_4_] : [VARCHAR]) - [05:15:40]
+20:16:30,255 TRACE BasicExtractor:60 - extracted value ([nota4_4_] : [INTEGER]) - [3]
+20:16:30,255 TRACE BasicExtractor:50 - extracted value ([usuario_6_4_] : [INTEGER]) - [null]
+20:16:30,255 TRACE BasicExtractor:60 - extracted value ([versao5_4_] : [INTEGER]) - [1]
+20:16:30,255 TRACE BasicExtractor:60 - extracted value ([video_id7_4_] : [INTEGER]) - [1]
+20:16:30,255 TRACE BasicExtractor:60 - extracted value ([id1_4_] : [INTEGER]) - [16]
+20:16:30,256 TRACE BasicExtractor:60 - extracted value ([datahora2_4_] : [TIMESTAMP]) - [2021-05-10T15:00:42.732245]
+20:16:30,256 TRACE BasicExtractor:60 - extracted value ([idade3_4_] : [VARCHAR]) - [05:15:40]
+20:16:30,256 TRACE BasicExtractor:60 - extracted value ([nota4_4_] : [INTEGER]) - [4]
+20:16:30,256 TRACE BasicExtractor:60 - extracted value ([usuario_6_4_] : [INTEGER]) - [8]
+20:16:30,256 TRACE BasicExtractor:60 - extracted value ([versao5_4_] : [INTEGER]) - [1]
+20:16:30,256 TRACE BasicExtractor:60 - extracted value ([video_id7_4_] : [INTEGER]) - [16]
+20:16:30,257 DEBUG SQL:144 - select usuario0_.id as id1_2_0_, usuario0_.email as email2_2_0_, usuario0_.versao as versao3_2_0_ from usuario20191370003 usuario0_ where usuario0_.id=?
+20:16:30,257 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [2]
+20:16:30,337 TRACE BasicExtractor:60 - extracted value ([email2_2_0_] : [VARCHAR]) - [yohanna@gmail.com]
+20:16:30,337 TRACE BasicExtractor:60 - extracted value ([versao3_2_0_] : [INTEGER]) - [0]
+20:16:30,338 TRACE CollectionType:847 - Created collection wrapper: [modelo.Usuario.visualizacoes#2]
+20:16:30,338 DEBUG SQL:144 - select video0_.id as id1_3_0_, video0_.link as link2_3_0_, video0_.media as media3_3_0_, video0_.nome as nome4_3_0_, video0_.versao as versao5_3_0_ from video20191370002 video0_ where video0_.id=?
+20:16:30,338 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [8]
+20:16:30,417 TRACE BasicExtractor:60 - extracted value ([link2_3_0_] : [VARCHAR]) - [https://www.youtube.com/watch?v=aR7CKNFECx0&list=PLHz_AreHm4dkqe2aR0tQK74m8SFe-aGsY&index=3]
+20:16:30,417 TRACE BasicExtractor:60 - extracted value ([media3_3_0_] : [DOUBLE]) - [4.5]
+20:16:30,418 TRACE BasicExtractor:60 - extracted value ([nome4_3_0_] : [VARCHAR]) - [Curso POO Teoria  - Aula - 02A]
+20:16:30,418 TRACE BasicExtractor:60 - extracted value ([versao5_3_0_] : [INTEGER]) - [2]
+20:16:30,418 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#8]
+20:16:30,418 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#8]
+20:16:30,418 DEBUG SQL:144 - select usuario0_.id as id1_2_0_, usuario0_.email as email2_2_0_, usuario0_.versao as versao3_2_0_ from usuario20191370003 usuario0_ where usuario0_.id=?
+20:16:30,418 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [3]
+20:16:30,495 TRACE BasicExtractor:60 - extracted value ([email2_2_0_] : [VARCHAR]) - [julia@gmail.com]
+20:16:30,496 TRACE BasicExtractor:60 - extracted value ([versao3_2_0_] : [INTEGER]) - [0]
+20:16:30,496 TRACE CollectionType:847 - Created collection wrapper: [modelo.Usuario.visualizacoes#3]
+20:16:30,496 DEBUG SQL:144 - select video0_.id as id1_3_0_, video0_.link as link2_3_0_, video0_.media as media3_3_0_, video0_.nome as nome4_3_0_, video0_.versao as versao5_3_0_ from video20191370002 video0_ where video0_.id=?
+20:16:30,496 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [7]
+20:16:30,574 TRACE BasicExtractor:60 - extracted value ([link2_3_0_] : [VARCHAR]) - [https://www.youtube.com/watch?v=Ucyx_QPfDng&list=PLHz_AreHm4dkqe2aR0tQK74m8SFe-aGsY&index=2]
+20:16:30,574 TRACE BasicExtractor:60 - extracted value ([media3_3_0_] : [DOUBLE]) - [3.0]
+20:16:30,574 TRACE BasicExtractor:60 - extracted value ([nome4_3_0_] : [VARCHAR]) - [Curso POO Teoria  - Aula - 01B]
+20:16:30,574 TRACE BasicExtractor:60 - extracted value ([versao5_3_0_] : [INTEGER]) - [1]
+20:16:30,575 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#7]
+20:16:30,575 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#7]
+20:16:30,575 DEBUG SQL:144 - select usuario0_.id as id1_2_0_, usuario0_.email as email2_2_0_, usuario0_.versao as versao3_2_0_ from usuario20191370003 usuario0_ where usuario0_.id=?
+20:16:30,575 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [4]
+20:16:30,652 TRACE BasicExtractor:60 - extracted value ([email2_2_0_] : [VARCHAR]) - [ana@gmail.com]
+20:16:30,653 TRACE BasicExtractor:60 - extracted value ([versao3_2_0_] : [INTEGER]) - [0]
+20:16:30,653 TRACE CollectionType:847 - Created collection wrapper: [modelo.Usuario.visualizacoes#4]
+20:16:30,653 DEBUG SQL:144 - select usuario0_.id as id1_2_0_, usuario0_.email as email2_2_0_, usuario0_.versao as versao3_2_0_ from usuario20191370003 usuario0_ where usuario0_.id=?
+20:16:30,653 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [5]
+20:16:30,731 TRACE BasicExtractor:60 - extracted value ([email2_2_0_] : [VARCHAR]) - [joao@gmail.com]
+20:16:30,731 TRACE BasicExtractor:60 - extracted value ([versao3_2_0_] : [INTEGER]) - [0]
+20:16:30,731 TRACE CollectionType:847 - Created collection wrapper: [modelo.Usuario.visualizacoes#5]
+20:16:30,731 DEBUG SQL:144 - select video0_.id as id1_3_0_, video0_.link as link2_3_0_, video0_.media as media3_3_0_, video0_.nome as nome4_3_0_, video0_.versao as versao5_3_0_ from video20191370002 video0_ where video0_.id=?
+20:16:30,731 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [3]
+20:16:30,808 TRACE BasicExtractor:60 - extracted value ([link2_3_0_] : [VARCHAR]) - [https://www.youtube.com/watch?v=XXYlFuWEuKI&list=RDMMXXYlFuWEuKI&start_radio=1]
+20:16:30,808 TRACE BasicExtractor:60 - extracted value ([media3_3_0_] : [DOUBLE]) - [3.5]
+20:16:30,809 TRACE BasicExtractor:60 - extracted value ([nome4_3_0_] : [VARCHAR]) - [the weekend - save your tears]
+20:16:30,809 TRACE BasicExtractor:60 - extracted value ([versao5_3_0_] : [INTEGER]) - [2]
+20:16:30,809 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#3]
+20:16:30,809 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#3]
+20:16:30,809 DEBUG SQL:144 - select usuario0_.id as id1_2_0_, usuario0_.email as email2_2_0_, usuario0_.versao as versao3_2_0_ from usuario20191370003 usuario0_ where usuario0_.id=?
+20:16:30,809 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [6]
+20:16:30,887 TRACE BasicExtractor:60 - extracted value ([email2_2_0_] : [VARCHAR]) - [maria@gmail.com]
+20:16:30,887 TRACE BasicExtractor:60 - extracted value ([versao3_2_0_] : [INTEGER]) - [0]
+20:16:30,887 TRACE CollectionType:847 - Created collection wrapper: [modelo.Usuario.visualizacoes#6]
+20:16:30,888 DEBUG SQL:144 - select video0_.id as id1_3_0_, video0_.link as link2_3_0_, video0_.media as media3_3_0_, video0_.nome as nome4_3_0_, video0_.versao as versao5_3_0_ from video20191370002 video0_ where video0_.id=?
+20:16:30,888 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [5]
+20:16:30,966 TRACE BasicExtractor:60 - extracted value ([link2_3_0_] : [VARCHAR]) - [https://www.youtube.com/watch?v=cHHLHGNpCSA&list=RDMMXXYlFuWEuKI&index=3]
+20:16:30,966 TRACE BasicExtractor:60 - extracted value ([media3_3_0_] : [DOUBLE]) - [5.0]
+20:16:30,966 TRACE BasicExtractor:60 - extracted value ([nome4_3_0_] : [VARCHAR]) - [Avicii - Waiting For Love]
+20:16:30,966 TRACE BasicExtractor:60 - extracted value ([versao5_3_0_] : [INTEGER]) - [1]
+20:16:30,967 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#5]
+20:16:30,967 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#5]
+20:16:30,967 DEBUG SQL:144 - select video0_.id as id1_3_0_, video0_.link as link2_3_0_, video0_.media as media3_3_0_, video0_.nome as nome4_3_0_, video0_.versao as versao5_3_0_ from video20191370002 video0_ where video0_.id=?
+20:16:30,967 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [13]
+20:16:31,045 TRACE BasicExtractor:60 - extracted value ([link2_3_0_] : [VARCHAR]) - [https://www.youtube.com/watch?v=a5uQMwRMHcs]
+20:16:31,045 TRACE BasicExtractor:60 - extracted value ([media3_3_0_] : [DOUBLE]) - [2.0]
+20:16:31,046 TRACE BasicExtractor:60 - extracted value ([nome4_3_0_] : [VARCHAR]) - [Daft Punk ft. Julian Casablancas - Instant Crush]
+20:16:31,046 TRACE BasicExtractor:60 - extracted value ([versao5_3_0_] : [INTEGER]) - [1]
+20:16:31,046 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#13]
+20:16:31,046 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#13]
+20:16:31,046 DEBUG SQL:144 - select video0_.id as id1_3_0_, video0_.link as link2_3_0_, video0_.media as media3_3_0_, video0_.nome as nome4_3_0_, video0_.versao as versao5_3_0_ from video20191370002 video0_ where video0_.id=?
+20:16:31,046 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [11]
+20:16:31,124 TRACE BasicExtractor:60 - extracted value ([link2_3_0_] : [VARCHAR]) - [https://www.youtube.com/watch?v=v2AC41dglnM&list=RDa5uQMwRMHcs&index=15]
+20:16:31,124 TRACE BasicExtractor:60 - extracted value ([media3_3_0_] : [DOUBLE]) - [3.0]
+20:16:31,124 TRACE BasicExtractor:60 - extracted value ([nome4_3_0_] : [VARCHAR]) - [AC/DC - Thunderstruck]
+20:16:31,124 TRACE BasicExtractor:60 - extracted value ([versao5_3_0_] : [INTEGER]) - [1]
+20:16:31,124 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#11]
+20:16:31,124 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#11]
+20:16:31,125 DEBUG SQL:144 - select video0_.id as id1_3_0_, video0_.link as link2_3_0_, video0_.media as media3_3_0_, video0_.nome as nome4_3_0_, video0_.versao as versao5_3_0_ from video20191370002 video0_ where video0_.id=?
+20:16:31,125 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [14]
+20:16:31,203 TRACE BasicExtractor:60 - extracted value ([link2_3_0_] : [VARCHAR]) - [https://www.youtube.com/watch?v=RQ9_TKayu9s]
+20:16:31,204 TRACE BasicExtractor:60 - extracted value ([media3_3_0_] : [DOUBLE]) - [4.0]
+20:16:31,204 TRACE BasicExtractor:60 - extracted value ([nome4_3_0_] : [VARCHAR]) - [Eminem - Cleanin' Out My Closet]
+20:16:31,204 TRACE BasicExtractor:60 - extracted value ([versao5_3_0_] : [INTEGER]) - [1]
+20:16:31,204 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#14]
+20:16:31,204 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#14]
+20:16:31,204 DEBUG SQL:144 - select usuario0_.id as id1_2_0_, usuario0_.email as email2_2_0_, usuario0_.versao as versao3_2_0_ from usuario20191370003 usuario0_ where usuario0_.id=?
+20:16:31,204 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [7]
+20:16:31,281 TRACE BasicExtractor:60 - extracted value ([email2_2_0_] : [VARCHAR]) - [aaa]
+20:16:31,281 TRACE BasicExtractor:60 - extracted value ([versao3_2_0_] : [INTEGER]) - [0]
+20:16:31,281 TRACE CollectionType:847 - Created collection wrapper: [modelo.Usuario.visualizacoes#7]
+20:16:31,282 DEBUG SQL:144 - select video0_.id as id1_3_0_, video0_.link as link2_3_0_, video0_.media as media3_3_0_, video0_.nome as nome4_3_0_, video0_.versao as versao5_3_0_ from video20191370002 video0_ where video0_.id=?
+20:16:31,282 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [1]
+20:16:31,359 TRACE BasicExtractor:60 - extracted value ([link2_3_0_] : [VARCHAR]) - [a]
+20:16:31,359 TRACE BasicExtractor:60 - extracted value ([media3_3_0_] : [DOUBLE]) - [4.0]
+20:16:31,359 TRACE BasicExtractor:60 - extracted value ([nome4_3_0_] : [VARCHAR]) - [a]
+20:16:31,359 TRACE BasicExtractor:60 - extracted value ([versao5_3_0_] : [INTEGER]) - [3]
+20:16:31,359 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#1]
+20:16:31,359 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#1]
+20:16:31,360 DEBUG SQL:144 - select usuario0_.id as id1_2_0_, usuario0_.email as email2_2_0_, usuario0_.versao as versao3_2_0_ from usuario20191370003 usuario0_ where usuario0_.id=?
+20:16:31,360 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [8]
+20:16:31,436 TRACE BasicExtractor:60 - extracted value ([email2_2_0_] : [VARCHAR]) - [ana]
+20:16:31,437 TRACE BasicExtractor:60 - extracted value ([versao3_2_0_] : [INTEGER]) - [0]
+20:16:31,437 TRACE CollectionType:847 - Created collection wrapper: [modelo.Usuario.visualizacoes#8]
+20:16:31,437 DEBUG SQL:144 - select video0_.id as id1_3_0_, video0_.link as link2_3_0_, video0_.media as media3_3_0_, video0_.nome as nome4_3_0_, video0_.versao as versao5_3_0_ from video20191370002 video0_ where video0_.id=?
+20:16:31,437 TRACE BasicBinder:64 - binding parameter [1] as [INTEGER] - [16]
+20:16:31,514 TRACE BasicExtractor:60 - extracted value ([link2_3_0_] : [VARCHAR]) - [testeB]
+20:16:31,515 TRACE BasicExtractor:60 - extracted value ([media3_3_0_] : [DOUBLE]) - [4.0]
+20:16:31,515 TRACE BasicExtractor:60 - extracted value ([nome4_3_0_] : [VARCHAR]) - [testeB]
+20:16:31,515 TRACE BasicExtractor:60 - extracted value ([versao5_3_0_] : [INTEGER]) - [1]
+20:16:31,515 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.assuntos#16]
+20:16:31,515 TRACE CollectionType:847 - Created collection wrapper: [modelo.Video.visualizacoes#16]
+20:21:02,699 TRACE TypeConfiguration$Scope:211 - Handling #sessionFactoryClosed from [org.hibernate.internal.SessionFactoryImpl@3cf36c2] for TypeConfiguration
+20:21:02,699 DEBUG TypeConfiguration$Scope:350 - Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@26066c52] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@3cf36c2]

@@ -20,6 +20,7 @@ import javax.swing.table.DefaultTableModel;
 
 import fachada.Fachada;
 import modelo.Visualizacao;
+
 import java.awt.Toolkit;
 
 public class TelaListagemVisualizacao {
@@ -103,8 +104,13 @@ public class TelaListagemVisualizacao {
 
 					List<Visualizacao> lista = Fachada.listarVisualizacoes();
 					for (Visualizacao v : lista) {
+						if (!(v.getUsuario() == null)) {
 						model.addRow(new Object[] { v.getId(), v.getVideo().getLink(), v.getUsuario().getEmail(), v.getNota() });
 						table.setModel(model);
+						}else {
+							model.addRow(new Object[] { v.getId(), v.getVideo().getLink(), "  " , v.getNota() });
+							table.setModel(model);
+						}
 					}
 				} catch (Exception erro) {
 					JOptionPane.showMessageDialog(frmListagemVisu, erro.getMessage());
